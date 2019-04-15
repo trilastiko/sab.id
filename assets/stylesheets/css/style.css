@@ -160,6 +160,32 @@ h6, .h6 {
   font-size: 18px;
 }
 
+p {
+  margin-top: 0;
+  margin-bottom: 1.4em;
+}
+
+
+::-webkit-input-placeholder { /* Edge */
+  color: #224390;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #224390;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+::placeholder {
+  color: #224390;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
 
 /* Main menu navigation */
 .nav-sab {
@@ -209,13 +235,25 @@ h6, .h6 {
 
 .nav-sab .nav-round a {
     background: #A5B2D2;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    padding: 10px 13px;
+    background-image: linear-gradient(#a9b6d4, #899bc4);
+    display: inline-block;
+    text-align: center;
+    line-height: 48px;
+    width: 48px;
+    height: 48px;
+    -webkit-border-radius: 48px;
+    -moz-border-radius: 48px;
+    border-radius: 48px;
+    padding: 0;
     margin-left: 10px;
-    font-size: 15px;
+    font-size: 20px;
     color: #FFFFFF;
+    transition: all 0.45s;
+    
+}
+
+.nav-sab .nav-round a:hover{
+    background-image: linear-gradient(#8495bc, #6f7c9a);
 }
 
 .nav-works-sab {
@@ -226,7 +264,7 @@ h6, .h6 {
 }
 
 .nav-works-sab li {
-    padding-left: 20px;
+    padding-left: 0px;
 }
 
 .nav-works-sab a {
@@ -389,7 +427,7 @@ hr {
     opacity: 1;
     border: transparent;
     font-size: 18px;
-    font-weight: 500;
+    font-weight:600;
     color: #127149;
     width: 100%;
 }
@@ -400,7 +438,7 @@ hr {
     border: transparent;
     font-size: 24px;
     font-weight: 600;
-    color: #127149;
+    color: #224390;
     width: 100%;
 }
 
@@ -430,7 +468,7 @@ hr {
     box-shadow: none;
     outline-offset: 0;
     outline: none;
-    opacity: 0.5;
+    /*opacity: 0.5;*/
 }
 
 .link-white {
@@ -602,6 +640,7 @@ section.hero-images .whale-img {
 
 .about-sab h2 {
     font-size: 48px;
+    font-weight: bold;
 }
 /*
 @media (max-width: 768px) {
@@ -629,6 +668,11 @@ section.hero-images .whale-img {
 .works-sab h2 {
     font-size: 48px;
 }
+
+ .works-sab .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
 /*
 @media (max-width: 768px) {
     .works-sab h2 {
@@ -856,12 +900,17 @@ section.hero-images .whale-img {
 
 /* Contact */
 
+
+/* Contact */
+
 .contact-sab {
     margin: 70px 0 0;
 }
 
 .contact-sab h2 {
     font-size: 37px;
+    font-weight: 700;
+    text-align: left
 }
 /*
 @media (max-width: 768px) {
@@ -893,7 +942,7 @@ section.hero-images .whale-img {
 
 .contact-sab .contact-details-sab {
     padding: 12% 0;
-    max-width: 65%;
+    max-width: 45%;
     margin: 0 auto;
 }
 
@@ -937,7 +986,7 @@ section.hero-images .whale-img {
 .service-sab {
     margin: 0 auto;
     padding: 100px 0;
-    background: #5acf9e;
+    background: #0a2460;
 }
 
 .service-sab .button-sab-center {
@@ -947,28 +996,32 @@ section.hero-images .whale-img {
 }
 
 /*** Footer ***/
-
 footer {
     background: #224390;
     color: #FFFFFF;
-    padding: 165px 0 30px;
+    padding: 165px 0 13px;
 }
 
 footer .socmed-sab li {
     display: inline-block;
     padding-right: 40px;
-    font-size: 30px;
+    font-size: 40px;
 }
 footer .socmed-sab li a{color: #FFFFFF;}
 footer .link-sab {
-    line-height: 30px;
+    line-height:normal;
+}
+
+footer .link-sab li{
+    margin-bottom: 16px
 }
 
 footer .link-sab a {
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 2px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
     position: relative;
 }
 
@@ -997,7 +1050,9 @@ footer .link-sab a:after {
 }
 
 footer p {
-    margin-top: 0;
+    margin:0 0 17px 0;
+    font-weight: 400;
+    font-size: 18px
 }
 
 footer .hr-sab {
@@ -1007,6 +1062,16 @@ footer .hr-sab {
     border-left: transparent;
 }
 
+footer .widget-title{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+footer .copyright{
+    font-weight: 300;
+    font-size: 15px
+}
 
 /*******/
 .mar-top-3p {
