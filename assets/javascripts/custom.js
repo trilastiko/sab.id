@@ -27,7 +27,7 @@
 
                     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
                     //Callout Content
-                    var contentString = 'sabtech';
+                    var contentString = 'Sinergi Antar Benua (SAB)';
                     //Set window width + content
                     var infowindow = new google.maps.InfoWindow({
                         content: contentString,
@@ -60,12 +60,12 @@
 
             //----------- 3. Counter ----------- 
             theme_counter: function() {
-
-                $('.counter').counterUp({
-                    delay: 10,
-                    time: 1000
-                });
-
+                if ($.fn.counterUp) {
+                    $('.counter').counterUp({
+                        delay: 10,
+                        time: 1000
+                    });
+                }
             },
 
             //---------- 4. Fixed Navigation Menu -----------
@@ -73,10 +73,43 @@
                 $(window).bind('scroll', function() {
                      if ($(window).scrollTop() >= 100) {
                          $('.nav-sab').addClass('fixed');
+                         $('.nav-sab.fixed').find('img').attr('src','images/logo-white.png');
                      }
                      else {
                          $('.nav-sab').removeClass('fixed');
+                         $('.nav-sab').find('img').attr('src','images/logo.png');
+                         $('.nav-sab.transparent').find('img').attr('src','images/logo-white.png');
                      }
+                });
+            },
+
+            //---------- 5. Team List -----------
+            theme_team_list: function() {
+                var a = $('.team-list'),
+                    b = $('.sab-member-list');
+
+                b.find('.team-list').each(function(){
+
+                    $(this).find('li').click(function() {
+                        var name = $(this).attr('data-name'),
+                            img = $(this).attr('data-image'),
+                            position = $(this).attr('data-position'),
+                            desc = $(this).attr('data-description'),
+                            fb = $(this).attr('data-facebook'),
+                            tw = $(this).attr('data-twitter'),
+                            ig = $(this).attr('data-instagram'),
+                            ln = $(this).attr('data-linkedin');
+                        
+                            $('.info-name').text(name);
+                            $('.info-position').text(position);
+                            $('.info-description').text(desc);
+                            $('.people').attr('src', img);
+                            $('.fb').attr('href', fb);
+                            $('.tw').attr('href', tw);
+                            $('.ig').attr('href', ig);
+                            $('.ln').attr('href', ln);
+                    });
+
                 });
             },
 
@@ -86,6 +119,7 @@
                 SAB.theme_map();
                 SAB.theme_counter();
                 SAB.theme_nav();
+                SAB.theme_team_list();
             }
 
         } //end SAB

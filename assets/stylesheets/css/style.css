@@ -154,17 +154,24 @@ h6, .h6 {
   font-size: 18px;
 }
 
-<<<<<<< HEAD
 .semibold{
     font-weight: 600;
 }
 
-=======
+.bold{
+    font-weight: 700;
+}
+
+.extrabold{
+    font-weight: 800;
+}
+
+
 p {
   margin-top: 0;
   margin-bottom: 1.4em;
 }
->>>>>>> origin/master
+
 
 ::-webkit-input-placeholder { /* Edge */
   color: #224390;
@@ -187,6 +194,17 @@ p {
   font-weight: 600;
 }
 
+.title-section{
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle{
+    font-size: 24px;
+    text-align: center;
+}
+
 /* Main menu navigation */
 .nav-sab {
     background: #FFFFFF;
@@ -195,6 +213,7 @@ p {
     padding: 10px 0;
     z-index: 9;
     top:0;
+    transition: background 0.6s;
 }
 
 
@@ -202,6 +221,7 @@ p {
     background: transparent;
 }
 
+.nav-sab.fixed,
 .nav-sab.fixed.transparent{
     background: #21408b;
 }
@@ -223,7 +243,8 @@ p {
     position: relative;
 }
 
-.nav-sab.transparent .nav-list a{
+.nav-sab.transparent .nav-list a,
+.nav-sab.fixed .nav-list a{
     color: #fff;
 }
 
@@ -232,7 +253,8 @@ p {
     width: 100%;
 }
 
-.nav-sab.transparent .nav-list a:hover:after{
+.nav-sab.transparent .nav-list a:hover:after,
+.nav-sab.fixed .nav-list a:hover:after{
     background: #fff
 }
 
@@ -251,7 +273,8 @@ p {
     transition: all 0.2s ease-out;
 }
 
-.nav-sab.transparent .nav-list a:after{
+.nav-sab.transparent .nav-list a:after,
+.nav-sab.fixed .nav-list a:after{
     background: #fff
 }
 
@@ -337,6 +360,14 @@ hr {
 }
 
 .sab-hr{ background: url("../../../images/hr.png") no-repeat center ; height: 36px;}
+
+.space20{height: 20px; display: block;}
+.space30{height: 30px; display: block;}
+.space40{height: 40px; display: block;}
+.space50{height: 50px; display: block;}
+.space60{height: 60px; display: block;}
+.space70{height: 70px; display: block;}
+.space80{height: 80px; display: block;}
 
 /*
 @media (max-width: 768px) {
@@ -1035,8 +1066,16 @@ section.hero-images .whale-img {
     max-width: 700px
 }
 
+.page-title.center{
+    padding-top: 120px;
+    padding-left: 0px;
+    max-width: 100%;
+    text-align: center;
+}
+
 .page-title h1{
     font-weight: 700;
+    font-size: 48px;
 }
 
 .bold{font-weight: 700;}
@@ -1086,6 +1125,117 @@ section.hero-images .whale-img {
 }
 
 .tdesc{margin-bottom: 60px}
+
+/*** About Page ***/
+.profile-sab h3{
+    font-size: 36px;
+}
+
+dl.info {
+    margin-bottom:50px;
+}
+ 
+dl.info dt {
+    float:left; 
+    font-weight:700; 
+    margin-right:10px; 
+    padding:5px;  
+    clear: left;
+    font-size: 24px;
+    width: 300px;
+    margin-bottom: 20px
+}
+
+dl.info dt.expand{
+    width: auto;
+}
+ 
+dl.info dd {
+    margin:0px 0 20px 0; 
+    padding:5px 0;
+    font-size: 24px
+}
+
+.team-list{
+    margin:0 auto 30px auto;
+    text-align: center;
+}
+.team-list li{
+    text-align: center;
+    display: inline-block;
+    margin-right: 72px;
+    vertical-align: top;
+}
+
+.team-list li.last{margin-right: 0}
+.team-list img{
+    display: block;
+    height: 128px;
+    width: 128px;
+    border-radius: 128px;
+    margin-bottom: 32px;
+    border:solid 7px #fff;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.team-list .tojoin{
+    display: block;
+    height: 128px;
+    width: 128px;
+    border-radius: 128px;
+    line-height: 128px;
+    margin-bottom: 32px;
+    background: #f3f7ff
+}
+
+.team-list .tojoin i{
+    font-size: 35px;
+    line-height: 128px;
+    color: #90a1c7
+}
+
+.team-list li.current img,
+.team-list img:hover{
+    border-color:#3d6ad1;
+}
+
+.team-list .name{
+    font-size: 24px;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.team-list .position{
+    font-size: 15px;
+    color: #224390;
+    opacity: .7
+}
+
+.info-people-section{
+
+    background: #f6f8fe;
+    margin: 60px 0 60px 0
+
+}
+.info-people-section img{display: block;}
+.info-people-section .container{padding: 0}
+.info-people{padding: 60px}
+.info-people h5{font-size: 48px; margin-bottom:0;}
+.info-people h6{font-size: 30px; opacity: .7; margin-bottom: 40px}
+
+.sp{padding: 0 0 0 20px}
+.sp i{
+    font-size: 30px;
+    color: #224390;
+    vertical-align: middle;
+}
+
+.profile-sab #map{
+    height: 490px;
+    width: 100%;
+}
+
 
 /*** Footer ***/
 footer {
