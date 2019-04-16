@@ -1,0 +1,60 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 15/04/2019 10:27
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../../../fonts/Flaticon.eot");
+  src: url("../../../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../../../fonts/Flaticon.woff2") format("woff2"),
+       url("../../../fonts/Flaticon.woff") format("woff"),
+       url("../../../fonts/Flaticon.ttf") format("truetype"),
+       url("../../../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../../../fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 80px;
+font-style: normal;
+margin-left: 0px;
+}
+
+.flaticon-monitor:before { content: "\f100"; }
+.flaticon-cms:before { content: "\f101"; }
+.flaticon-writing:before { content: "\f102"; }
+.flaticon-mobile-shopping:before { content: "\f103"; }
+.flaticon-shopping:before { content: "\f104"; }
+.flaticon-shopping-1:before { content: "\f105"; }
+.flaticon-employee:before { content: "\f106"; }
+.flaticon-handshake:before { content: "\f107"; }
+.flaticon-startup:before { content: "\f108"; }
+.flaticon-high-heels:before { content: "\f109"; }
+.flaticon-responsive:before { content: "\f10a"; }
+.flaticon-fast-food:before { content: "\f10b"; }
+.flaticon-newspaper:before { content: "\f10c"; }
+.flaticon-excavator:before { content: "\f10d"; }
+.flaticon-smiling-baby:before { content: "\f10e"; }
+.flaticon-makeup:before { content: "\f10f"; }
+.flaticon-heart:before { content: "\f110"; }
+.flaticon-blender:before { content: "\f111"; }
+.flaticon-tennis:before { content: "\f112"; }
+.flaticon-train-toy:before { content: "\f113"; }
+.flaticon-text:before { content: "\f114"; }
+.flaticon-target:before { content: "\f115"; }
+.flaticon-email:before { content: "\f116"; }
+.flaticon-history:before { content: "\f117"; }
+.flaticon-photo-camera:before { content: "\f118"; }
+.flaticon-paint-palette:before { content: "\f119"; }
+.flaticon-video-player:before { content: "\f11a"; }
+.flaticon-ads:before { content: "\f11b"; }

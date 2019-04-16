@@ -160,6 +160,10 @@ h6, .h6 {
   font-size: 18px;
 }
 
+.semibold{
+    font-weight: 600;
+}
+
 
 ::-webkit-input-placeholder { /* Edge */
   color: #224390;
@@ -192,6 +196,15 @@ h6, .h6 {
     top:0;
 }
 
+
+.nav-sab.transparent{
+    background: transparent;
+}
+
+.nav-sab.fixed.transparent{
+    background: #21408b;
+}
+
 .nav-sab .nav li {
     display: inline-block;
 }
@@ -209,9 +222,17 @@ h6, .h6 {
     position: relative;
 }
 
+.nav-sab.transparent .nav-list a{
+    color: #fff;
+}
+
 .nav-sab .nav-list a:hover:after {
     background: #224390;
     width: 100%;
+}
+
+.nav-sab.transparent .nav-list a:hover:after{
+    background: #fff
 }
 
 .nav-sab .nav-list a:after {
@@ -227,6 +248,10 @@ h6, .h6 {
     -ms-transition: all 0.2s ease-out;
     -o-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
+}
+
+.nav-sab.transparent .nav-list a:after{
+    background: #fff
 }
 
 .nav-sab .nav-round a {
@@ -794,6 +819,7 @@ section.hero-images .whale-img {
 
 /* Count number */
 .count-sab{ margin-top: 20px; }
+.sab-service-page .count-sab{ margin-top: 90px; }
 .count-sab h2{ font-weight: normal; margin: 0; color: #5acf9e }
 
 
@@ -981,6 +1007,74 @@ section.hero-images .whale-img {
     margin: 0 auto;
     text-align: center;
 }
+
+/*** Service Page ***/
+.header-service{
+    padding:0;
+    min-height: 500px;
+    background: #224390 url('../../../images/header-service.jpg') no-repeat;
+    color: #FFFFFF;
+    background-size:100%;
+    background-position: center center
+}
+
+.page-title{
+    padding-top: 180px;
+    padding-left: 0px;
+    max-width: 700px
+}
+
+.page-title h1{
+    font-weight: 700;
+}
+
+.bold{font-weight: 700;}
+
+.our-process h2:before{
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: #224390;
+    position: absolute;
+    left: -80px;
+    top: 35px
+}
+.process-list{margin: 30px 0 0 0}
+.process-list li{margin-bottom: 30px}
+.img-our-process{margin-top: 70px; display: block}
+
+.blue-section{
+    background:#224390;
+}
+
+.blue-section *{
+    color:#959fc1;
+}
+
+.blue-section i{
+    display: block;
+    margin-bottom: 30px;
+}
+
+.servis-category{padding: 80px 0 30px 0}
+.servis-category h3{
+    font-size: 24px;
+}
+
+.servis-category svg path {fill: #7f91bd;}
+.servis-category img.svg{width: 80px}
+
+.services-section-sab{
+    margin-top: 50px;
+}
+
+.services-section-sab i{
+    display: block;
+    margin-bottom: 30px;
+}
+
+.tdesc{margin-bottom: 60px}
 
 /*** Footer ***/
 
