@@ -1092,6 +1092,7 @@ footer {
     background: #224390;
     color: #FFFFFF;
     padding: 165px 0 13px;
+    position: relative;
 }
 
 footer .socmed-sab li {
@@ -1163,6 +1164,20 @@ footer .widget-title{
 footer .copyright{
     font-weight: 300;
     font-size: 15px
+}
+
+.to-top{
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    line-height: 48px;
+    background: #516ba7;
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    text-align: center;
+    cursor: pointer;
+
 }
 
 /*******/
