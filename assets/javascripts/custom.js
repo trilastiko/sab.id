@@ -113,6 +113,128 @@
                 });
             },
 
+            //---------- 6. Isotope Metafizy ----------- 
+            theme_works_isotope: function(){
+                if ($.fn.isotope) {
+                // init Isotope
+                var $grid = $('.grid').isotope({
+                    itemSelector: '.items'
+                });
+                var iso = $grid.data('isotope');
+                var $filterCount = $('.filter-title');
+
+                // filter functions
+                var filterFns = {
+                    // show if number is greater than 50
+                    numberGreaterThan50: function() {
+                        var number = $(this).find('.number').text();
+                        return parseInt( number, 10 ) > 50;
+                    },
+                    // show if name ends with -ium
+                    ium: function() {
+                        var name = $(this).find('.name').text();
+                        return name.match( /ium$/ );
+                    }
+                };
+
+                $('.portfolio-sab--filter a').on( 'click', function() {
+                    var filterValue = $( this ).attr('data-filter');
+                    // use filterFn if matches value
+                    filterValue = filterFns[ filterValue ] || filterValue;
+                    $grid.isotope({ filter: filterValue });
+                    updateFilterCount();
+                    return false;
+                });
+
+                function updateFilterCount() {
+                    $filterCount.text( 'We Found ' + iso.filteredItems.length + ' example design' );
+                  }
+                  
+                  updateFilterCount();
+                  
+                  // change is-checked class on buttons
+                  $('.portfolio-sab--filter a').each( function( i, buttonGroup ) {
+                    var $buttonGroup = $( buttonGroup );
+                    $buttonGroup.on( 'click', function() {
+                      $buttonGroup.find('.is-checked').removeClass('is-checked');
+                      $( this ).addClass('is-checked');
+                    });
+                  });
+
+                  var mySwiper = new Swiper ('.sab-work-page .swiper-container', {
+                    // Optional parameters
+                    loop: true,
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                
+                    // If we need pagination
+                    pagination: {
+                      el: '.swiper-pagination',
+                      type: 'custom'
+                    },
+                
+                    // Navigation arrows
+                    navigation: {
+                      nextEl: '.swiper-button-next',
+                      prevEl: '.swiper-button-prev',
+                    },
+                
+                    // And if we need scrollbar
+                    scrollbar: {
+                      el: '.swiper-scrollbar',
+                    },
+                  })
+                }
+            },
+
+            //---------- 6. Testimonial Section ----------- 
+            theme_testi: function() {
+                var swiper = new Swiper('.testimony-sab-slide', {
+                      direction: 'vertical',
+                      effect: 'fade',
+                      pagination: {
+                        el: '.testi-sab-pagination',
+                        clickable: true,
+                      },
+                  });
+            }, 
+
+            //---------- 4. Work Section -----------
+            theme_works: function() {
+                var swiper = new Swiper('.works-sab-slide', {
+                        slidesPerView: 3,
+                        spaceBetween: 60,
+                        loop: true,
+                        pagination: {
+                            el: '.works-sab-pagination',
+                            type: 'fraction',
+                            renderFraction: function (currentClass, totalClass) {
+                                  return '<span class="' + currentClass + '"></span>' +
+                                         ' <span class="sp-line"></span>' +
+                                         '<span class="' + totalClass + '"></span>';
+                              }
+                        },
+                        navigation: {
+                        nextEl: '.swiper-button-next',
+                        //prevEl: '.works-sab-pagination',
+                        },
+                  });
+            },
+
+            //---------- 6. Header Slider -----------
+            theme_header: function() {
+                var swiper = new Swiper('.header-sab-slide', {
+                      direction: 'vertical',
+                      slidesPerView: 1,
+                      mousewheel: false,
+                      pagination: {
+                        el: '.header-sab-pagination',
+                        clickable: true,
+                      },
+                  });
+            },  
+ 
+
             // theme init
             theme_init: function() {
                 SAB.theme_scrollUP();
@@ -120,6 +242,10 @@
                 SAB.theme_counter();
                 SAB.theme_nav();
                 SAB.theme_team_list();
+                SAB.theme_works_isotope();
+                SAB.theme_works();
+                SAB.theme_testi();
+                SAB.theme_header();
             }
 
         } //end SAB

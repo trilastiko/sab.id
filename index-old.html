@@ -19,7 +19,9 @@
 
     <!--Custom styles for this template-->
     <link href="assets/stylesheets/css/animate.css" rel="stylesheet">
-    <link href="assets/stylesheets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/stylesheets/css/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/stylesheets/css/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+
     <link href="assets/stylesheets/css/style.css" rel="stylesheet">
 </head>
 
@@ -31,7 +33,7 @@
                 <div class="col text-menu text-right visible-xs">Menu</div>
                 <div class="col text-center hidden-xs">
                     <ul class="nav nav-list">
-                        <li><a class="active" href="#"> Home </a></li>
+                        <li><a class="active" href="#"> Product </a></li>
                         <li><a href="service.html"> Service </a></li>
                         <li><a href="about.html"> About </a></li>
                         <li><a href="work.html"> Works</a></li>
@@ -48,38 +50,30 @@
         </div>
     </header>
     <section class="hero-images">
-        <div class="bg-city-hero-images">
-            <div class="bg-hero-images">
-                <div class="container">
-                    <div class="row">
-                        <div class="header-sab-slide swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide" >
-                                    <div class="item-name">
-                                        <h1>Sinergi Antar
-                                            </br> Benua</h1>
-                                        <p>Making authentic product in our hand. </p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="item-name">
-                                        <h1>Increase your
-                                            </br> business</h1>
-                                        <p>Grow up your link and more.</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="item-name">
-                                        <h1>Engage people
-                                            </br> on your business</h1>
-                                        <p>Getting Relationship is our goal.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Add Pagination -->
-                            <div class="header-sab-pagination swiper-pagination"></div>
-                        </div>
-                    </div>
+        <div class="fadeOut owl-carousel owl-theme">
+            <div class="item" id="parallax">
+                <div class="item-city"><img class="city-img" src="images/city.png"></div>
+                <div class="item-whale"><img class="par whale-img" src="images/paus.png"></div>
+                <div class="item-name">
+                    <h1>Sinergi Antar
+                        </br> Benua</h1>
+                    <p>Making authentic product in our hand. </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-city"><img class="city-img" src="images/city-dark.png"></div>
+                <div class="item-name">
+                    <h1>Increase your
+                        </br> business</h1>
+                    <p>Grow up your link and more.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-city"><img class="city-img" src="images/mountain-grid.png"></div>
+                <div class="item-name">
+                    <h1>Engage people
+                        </br> on your business</h1>
+                    <p>Getting Relationship is our goal.</p>
                 </div>
             </div>
         </div>
@@ -111,16 +105,9 @@ isn't anything embarrassing.</p>
     <section class="works-sab mar-btm-80">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
-                    <h2 class="text-center font-bold">Works</h2>
+                <div class="offset-sm-1 col-sm-12">
+                    <h2 class="font-bold">Works</h2>
                 </div>
-                <div class="row align-items-center mar-btm-80">
-                <div class="col">&nbsp;</div>
-                <div class="col-12 col-lg-5">
-                    <p class="text-center">Duis dapibus eros non nisi modern sollicitudin sollicitudin. Many desktop publishing packages and web page editors now. Learn More</p>
-                </div>
-                <div class="col">&nbsp;</div>
-            </div>
             </div>
         </div>
         <div class="container">
@@ -136,7 +123,7 @@ isn't anything embarrassing.</p>
                     </ul>
                 </div>
                 <div class="col-sm-10">
-                  <div class="works-sab-slide swiper-container ">
+                    <div class="works-sab-slide swiper-container owl-carousel-xx owl-theme-xx">
                         <div class="swiper-wrapper">
                             <div class="item swiper-slide"><img class="city-img" src="images/slide1.jpg">
                                 <h3>Beride Project Website</h3>
@@ -164,9 +151,12 @@ isn't anything embarrassing.</p>
                             </div>
                         </div>
                         <!-- Add Pagination -->
-                        <div class="works-sab-pagination swiper-pagination"></div>
+                        <div class="swiper-pagination"></div>
                         <!-- Add Arrows -->
-                        <div class="works-sab-button-next swiper-button-next"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+
+                        
                     </div>
                 </div>
             </div>
@@ -175,43 +165,36 @@ isn't anything embarrassing.</p>
     <section class="works-sab mar-btm-50">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
-                    <h2 class="text-center font-bold">Service</h2>
+                <div class="offset-sm-1 col-sm-12">
+                    <h2 class="font-bold mar-btm-50">Service</h2>
                 </div>
-            </div>
-             <div class="row align-items-center mar-btm-80">
-                <div class="col">&nbsp;</div>
-                <div class="col-12 col-lg-5">
-                    <p class="text-center">Duis dapibus eros non nisi modern sollicitudin sollicitudin. Many desktop publishing packages and web page editors now. Learn More</p>
-                </div>
-                <div class="col">&nbsp;</div>
             </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
-                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-monitor"></i></div>
+                        <div class="col-sm-4"><img class="center-img mar-pad-70" src="images/icon-1.png">
                             <h3 class="semibold">Website</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
-                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-shopping-1"></i></div>
+                        <div class="col-sm-4"><img class="center-img mar-pad-70" src="images/icon-2.png">
                             <h3 class="semibold">E-Commerce</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
-                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-cms"></i></div>
+                        <div class="col-sm-4"><img class="center-img mar-pad-70" src="images/icon-3.png">
                             <h3 class="semibold">Custom Software</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
-                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-mobile-shopping"></i></div>
+                        <div class="col-sm-4"><img class="center-img mar-pad-70" src="images/icon-4.png">
                             <h3 class="semibold">Mobile Apps</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
-                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-shopping"></i></div>
+                        <div class="col-sm-4"><img class="center-img mar-pad-70" src="images/icon-5.png">
                             <h3 class="semibold">Marketing</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
-                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-writing"></i></div>
+                        <div class="col-sm-4"><img class="center-img mar-pad-70" src="images/icon-6.png">
                             <h3 class="semibold">Content Creation</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
@@ -223,15 +206,7 @@ isn't anything embarrassing.</p>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h2 class="text-center font-bold">Our Precious Client</h2>
-                    <ul class="client-sab">
-                        <li><img class="city-img" src="images/logo-client1.jpg"></li>
-                        <li><img class="city-img" src="images/logo-client2.jpg"></li>
-                        <li><img class="city-img" src="images/logo-client3.jpg"></li>
-                        <li><img class="city-img" src="images/logo-client4.jpg"></li>
-                        <li><img class="city-img" src="images/logo-client5.jpg"></li>
-                        <li><img class="city-img" src="images/logo-client6.jpg"></li>
-                    </ul>
+                    <h2 class="text-center font-bold">Our Precious Client</h2><img class="city-img" src="images/logo-client.png">
                 </div>
             </div>
         </div>
@@ -239,26 +214,20 @@ isn't anything embarrassing.</p>
     <section class="testimony-sab">
         <div class="container">
             
-            <div class="testimony-sab-slide">
-                <h2>Testimonials</h2>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        
-                        <p>“ Dapibus eros non nisi modern sollicitudin sollicitudin. Moment of life :) ”</p><b>- Rony Mouldy</b>
-                    </div>
-                    <div class="swiper-slide">
-                       
-                        <p>“ Many Thanks ”</p><b>- Aurieala Montique</b>
-                    </div>
-                    <div class="swiper-slide">
-                     
-                        <p>“ Wow amazing content ever, I can't believe work with sab ”</p><b>- Meidana Moasaas</b>
-                    </div>
+            <div class="testimony-sab-slide owl-carousel owl-theme">
+                <div class="item">
+                    <h2>Testimonials</h2>
+                    <p>“ Dapibus eros non nisi modern sollicitudin sollicitudin. Moment of life :) ”</p><b>- Rony Mouldy</b>
                 </div>
-                <!-- Add Pagination -->
-                <div class="testi-sab-pagination swiper-pagination"></div>
+                <div class="item">
+                    <h2>Testimonials</h2>
+                    <p>“ Many Thanks ”</p><b>- Aurieala Montique</b>
+                </div>
+                <div class="item">
+                    <h2>Testimonials</h2>
+                    <p>“ Wow amazing content ever, I can't believe work with sab ”</p><b>- Meidana Moasaas</b>
+                </div>
             </div>
-
         </div>
     </section>
     <section class="count-sab">
@@ -360,7 +329,7 @@ isn't anything embarrassing.</p>
     </section>
     <section class="service-sab">
         <div class="container">
-            <div class="button-sab-center"><a class="btn btn-white text-center" href="service.html">Go to our service  &nbsp;<i class="fas fa-arrow-right"></i></a></div>
+            <div class="button-sab-center"><button class="btn btn-white text-center">Go to our Service  &nbsp;<i class="fas fa-arrow-right"></i></button></div>
         </div>
     </section>
     <footer>
@@ -401,9 +370,11 @@ isn't anything embarrassing.</p>
         </div>
     </footer>
     <script src="assets/javascripts/jquery-3.3.0.min.js"></script>
-    <script src="assets/javascripts/custom.js"></script>
+    <script src="assets/javascripts/custom-min.js"></script>
+    <script src="assets/stylesheets/css/owlcarousel/owl.carousel.js"></script>
+    <script src="assets/javascripts/TweenMax.min.js"></script>
    
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyA1UhCOI_7cG8aUBP9FYDef3LXLRoG72CI"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 
 
