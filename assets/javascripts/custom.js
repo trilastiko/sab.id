@@ -228,8 +228,11 @@
                       slidesPerView: 1,
                       mousewheel: false,
                       pagination: {
-                        el: '.header-sab-pagination',
-                        clickable: true,
+                            el: '.header-sab-pagination',
+                            clickable: true,
+                            renderBullet: function (index, className) {
+                              return '<span class="' + className + '">0' + (index + 1) + '</span>';
+                            },
                       },
                   });
             },  

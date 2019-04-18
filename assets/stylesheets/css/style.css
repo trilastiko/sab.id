@@ -650,6 +650,7 @@ section.hero-images .whale-img {
     background-position-y: 30px;
 }
 
+.header-sab-slide .swiper-slide{ width: 80%; }
 
 /* Swiper */
 .swiper-container {
@@ -671,6 +672,8 @@ section.hero-images .whale-img {
 .swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 21px 0;
     display: block;
+    text-indent: -30px;
+    font-weight: bold;
 }
 
 
@@ -680,7 +683,7 @@ section.hero-images .whale-img {
     height: 240px; overflow: hidden;
 }
 
-.hero-images .swiper-pagination{ top: 50%; }
+.hero-images .swiper-pagination{ top: 50%; right: 0; text-align: left; }
 
 
 .about-sab {
