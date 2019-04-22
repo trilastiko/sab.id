@@ -60,12 +60,42 @@
 
             //----------- 3. Counter ----------- 
             theme_counter: function() {
-                if ($.fn.counterUp) {
+
+                $(window).scroll(testScroll);
+                var viewed = false;
+
+                function isScrolledIntoView(elem) {
+                    var docViewTop = $(window).scrollTop();
+                    var docViewBottom = docViewTop + $(window).height();
+
+                    var elemTop = $(elem).offset().top;
+                    var elemBottom = elemTop + $(elem).height();
+
+                    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+                }
+
+                function testScroll() {
+                  if (isScrolledIntoView($(".count-sab")) && !viewed) {
+                      viewed = true;
+                      $('.counter').each(function () {
+                      $(this).prop('Counter',0).animate({
+                          Counter: $(this).text()
+                      }, {
+                          duration: 4000,
+                          easing: 'swing',
+                          step: function (now) {
+                              $(this).text(Math.ceil(now));
+                          }
+                      });
+                    });
+                  }
+                }
+                /*if ($.fn.counterUp) {
                     $('.counter').counterUp({
                         delay: 10,
                         time: 1000
                     });
-                }
+                }*/
             },
 
             //---------- 4. Fixed Navigation Menu -----------
@@ -81,6 +111,15 @@
                          $('.nav-sab.transparent').find('img').attr('src','images/logo-white.png');
                      }
                 });
+
+                if ($(window).width() < 767) {
+                    $('.nav').addClass('menu').removeClass('nav');
+                    $('.text-menu').click(function(){
+                        $('.nav-sab').toggleClass('mobile-menu');
+                        $('.menu').toggleClass("slide-menu");
+                    });
+                }
+
             },
 
             //---------- 5. Team List -----------
@@ -218,6 +257,18 @@
                         nextEl: '.swiper-button-next',
                         //prevEl: '.works-sab-pagination',
                         },
+                        breakpoints: {
+                        // when window width is <= 480px
+                        480: {
+                          slidesPerView: 1,
+                          spaceBetween: 20
+                        },
+                        // when window width is <= 640px
+                        640: {
+                          slidesPerView: 3,
+                          spaceBetween: 30
+                        }
+                        }
                   });
             },
 
@@ -237,6 +288,16 @@
                   });
             },  
  
+            //---------- 6. Header Slider -----------
+            theme_menu_work: function() {
+                 $('#fullpage').fullpage({
+                  anchors: ['website', 'ecommerce', 'custom', 'mobile', 'marketing', 'content'],
+                  menu: '#menu',
+                  scrollingSpeed : 1000,
+                  
+                });
+            },  
+
 
             // theme init
             theme_init: function() {
@@ -249,6 +310,7 @@
                 SAB.theme_works();
                 SAB.theme_testi();
                 SAB.theme_header();
+                //SAB.theme_menu_work();
             }
 
         } //end SAB

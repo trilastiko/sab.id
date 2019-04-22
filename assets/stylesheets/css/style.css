@@ -58,6 +58,7 @@ a {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    cursor: pointer;
 }
 
 /* change colours to suit your needs */
@@ -226,6 +227,10 @@ p {
     background: #21408b;
 }
 
+.nav-sab.fixed .text-menu, .nav-sab.transparent .text-menu, 
+.nav-sab.fixed.transparent .text-menu{ color: #fff }
+
+
 .nav-sab .nav li {
     display: inline-block;
 }
@@ -277,6 +282,40 @@ p {
 .nav-sab.fixed .nav-list a:after{
     background: #fff
 }
+
+/* Mobile */
+@media (max-width: 450px) {
+.text-menu{ position: relative; z-index: 10; }
+        .menu{
+            position: fixed;
+            background: #21408b;
+            color: #232323;         
+            height: 100%;
+            width: 200px;
+            top: 0;
+            right: -300px;
+            -webkit-transition: right 0.2s;
+            transition: right 0.2s;
+            padding: 60px 20px 20px 20px;    
+        }
+
+        .menu ul{
+            padding: 0;
+        }
+
+        .menu li{
+            list-style-type: none;
+            padding: 10px 0px;
+        }
+        .nav-sab.fixed .nav-list a, .nav-sab .nav-list a, .nav-sab.mobile-menu .text-menu,
+        .menu.nav-list.slide-menu a{
+            color: #fff;
+        }
+        .slide-menu{
+            right: 0 !important;
+        }
+}
+
 
 .nav-sab .nav-round a {
     background: #A5B2D2;
@@ -396,7 +435,7 @@ hr {
     display: none !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .visible-xs {
         display: block !important;
     }
@@ -749,6 +788,15 @@ section.hero-images .whale-img {
   transform: translate3d(0px, -50%, 0);
 }
 
+@media (max-width: 425px) {
+    .testimony-sab-slide {
+        padding: 0;
+        position: relative;
+        width: 340px;
+        height: 230px;
+        margin: 0px auto;
+    }
+}
 
 
 /* Work*/
@@ -785,8 +833,8 @@ background-image: url("../../../images/nav-swift-r.jpg");
   right: 10px;
   left: auto;
 }
-.works-sab .swiper-container{ padding-top: 70px; }
-.works-sab .swiper-pagination{ top: 0; right: 0; left: auto; width: auto; }
+
+.works-sab .swiper-pagination{ top: 10px; right: 0; left: auto; width: auto; }
 .works-sab .swiper-pagination-current, .swiper-pagination-total{ font-weight: bold; }
 .works-sab .swiper-pagination-current:before{
 content: "0"
@@ -797,6 +845,11 @@ content: "0"
 }
 .works-sab .swiper-pagination-fraction .sp-line{ display: inline-block; margin:0 10px;  width: 100px; height: 2px; vertical-align: middle; background-color: #a8b5d3 }
 
+@media (max-width: 767px) {
+    .works-sab {
+        text-align: center;
+    }
+}
 
 /* Tech */
 .tools-sab h3{ font-size: 24px; }
@@ -936,6 +989,13 @@ content: "0"
     margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+    .contact-sab .contact-details-sab {
+        padding: 12% 0;
+        max-width: 80% ;
+    } 
+}
+
 .contact-sab .contact-details-sab a{ color: #fff; text-decoration: none; position: relative; }
 .contact-sab .contact-details-sab a:after {
     content: '';
@@ -991,8 +1051,8 @@ content: "0"
     min-height: 500px;
     background: #224390 url('../../../images/header-service.jpg') no-repeat;
     color: #FFFFFF;
-    background-size:100%;
-    background-position: center center
+    background-size: cover;
+    background-position: 80% 50%;
 }
 
 .page-title{

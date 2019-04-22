@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+  
     
 
     <!--Custom styles for this template-->
@@ -29,7 +30,7 @@
             <div class="row align-items-center">
                 <div class="col text-left"><a href="https://sab.id"><img src="images/logo.png" alt="Sinergi Antar Benua"/></a></div>
                 <div class="col text-menu text-right visible-xs">Menu</div>
-                <div class="col text-center hidden-xs">
+                <div class="menu-wrapper">
                     <ul class="nav nav-list">
                         <li><a class="active" href="#"> Home </a></li>
                         <li><a href="service.html"> Service </a></li>
@@ -126,47 +127,89 @@ isn't anything embarrassing.</p>
         <div class="container">
             <div class="row">
                 <div class="col-sm-2">
-                    <ul class="nav-works-sab">
-                        <li><a href="#">Website</a></li>
-                        <li><a href="#">E-commerce</a></li>
-                        <li><a href="#">Custom Software</a></li>
-                        <li><a href="#">Mobile Apps</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Content Creation</a></li>
+                    <ul id="menu" class="nav-works-sab">
+                        <li data-menuanchor="website"><a href="#website">Website</a></li>
+                        <li data-menuanchor="ecommerce"><a href="#ecommerce">E-commerce</a></li>
+                        <li data-menuanchor="custom"><a href="#custom">Custom Software</a></li>
+                        <li data-menuanchor="mobile"><a href="#mobile">Mobile Apps</a></li>
+                        <li data-menuanchor="marketing"><a href="#marketing">Marketing</a></li>
+                        <li data-menuanchor="content"><a href="#content">Content Creation</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-10">
-                  <div class="works-sab-slide swiper-container ">
-                        <div class="swiper-wrapper">
-                            <div class="item swiper-slide"><img class="city-img" src="images/slide1.jpg">
-                                <h3>Beride Project Website</h3>
-                                <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin. </p>
-                            </div>
-                            <div class="item swiper-slide"><img class="city-img" src="images/slide2.jpg">
-                                <h3>Pakde Project Website</h3>
-                                <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
-                            </div>
-                            <div class="item swiper-slide"><img class="city-img" src="images/slide3.jpg">
-                                <h3>Batik Project Website</h3>
-                                <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
-                            </div>
-                            <div class="item swiper-slide"><img class="city-img" src="images/slide1.jpg">
-                                <h3>Beride Project Website</h3>
-                                <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
-                            </div>
-                            <div class="item swiper-slide"><img class="city-img" src="images/slide2.jpg">
-                                <h3>Pakde Project Website</h3>
-                                <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
-                            </div>
-                            <div class="item swiper-slide"><img class="city-img" src="images/slide3.jpg">
-                                <h3>Batik Project Website</h3>
-                                <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
-                            </div>
-                        </div>
-                        <!-- Add Pagination -->
-                        <div class="works-sab-pagination swiper-pagination"></div>
-                        <!-- Add Arrows -->
-                        <div class="works-sab-button-next swiper-button-next"></div>
+                    <div id="fullpage">
+                          <div class="section active"> 
+                              <div class="works-sab-slide swiper-container ">
+                                    <h3>Website</h3>
+                                    <div class="swiper-wrapper">
+
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide1.jpg">
+                                            <h3>Beride Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin. </p>
+                                        </div>
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide2.jpg">
+                                            <h3>Pakde Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
+                                        </div>
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide3.jpg">
+                                            <h3>Batik Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
+                                        </div>
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide1.jpg">
+                                            <h3>Beride Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
+                                        </div>
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide2.jpg">
+                                            <h3>Pakde Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
+                                        </div>
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide3.jpg">
+                                            <h3>Batik Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Add Pagination -->
+                                    <div class="works-sab-pagination swiper-pagination"></div>
+                                    <!-- Add Arrows -->
+                                    <div class="works-sab-button-next swiper-button-next"></div>
+                                </div>
+                          </div>
+                          <div class="section"> 
+                              <div class="works-sab-slide swiper-container ">
+                                    <h3>Website</h3>
+                                    <div class="swiper-wrapper">
+
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide1.jpg">
+                                            <h3>Beride Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin. </p>
+                                        </div>
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide2.jpg">
+                                            <h3>Pakde Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
+                                        </div>
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide3.jpg">
+                                            <h3>Batik Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
+                                        </div>
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide1.jpg">
+                                            <h3>Beride Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
+                                        </div>
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide2.jpg">
+                                            <h3>Pakde Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
+                                        </div>
+                                        <div class="item swiper-slide"><img class="city-img" src="images/slide3.jpg">
+                                            <h3>Batik Project Website</h3>
+                                            <p>Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Add Pagination -->
+                                    <div class="works-sab-pagination swiper-pagination"></div>
+                                    <!-- Add Arrows -->
+                                    <div class="works-sab-button-next swiper-button-next"></div>
+                                </div>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -409,6 +452,8 @@ isn't anything embarrassing.</p>
 
     <script src="assets/javascripts/jquery.counterup.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
 
 </body>
 
