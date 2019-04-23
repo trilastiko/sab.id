@@ -60,12 +60,42 @@
 
             //----------- 3. Counter ----------- 
             theme_counter: function() {
-                if ($.fn.counterUp) {
+
+                $(window).scroll(testScroll);
+                var viewed = false;
+
+                function isScrolledIntoView(elem) {
+                    var docViewTop = $(window).scrollTop();
+                    var docViewBottom = docViewTop + $(window).height();
+
+                    var elemTop = $(elem).offset().top;
+                    var elemBottom = elemTop + $(elem).height();
+
+                    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+                }
+
+                function testScroll() {
+                  if (isScrolledIntoView($(".count-sab")) && !viewed) {
+                      viewed = true;
+                      $('.counter').each(function () {
+                      $(this).prop('Counter',0).animate({
+                          Counter: $(this).text()
+                      }, {
+                          duration: 4000,
+                          easing: 'swing',
+                          step: function (now) {
+                              $(this).text(Math.ceil(now));
+                          }
+                      });
+                    });
+                  }
+                }
+                /*if ($.fn.counterUp) {
                     $('.counter').counterUp({
                         delay: 10,
                         time: 1000
                     });
-                }
+                }*/
             },
 
             //---------- 4. Fixed Navigation Menu -----------
@@ -81,6 +111,15 @@
                          $('.nav-sab.transparent').find('img').attr('src','images/logo-white.png');
                      }
                 });
+
+                if ($(window).width() < 767) {
+                    $('.nav').addClass('menu').removeClass('nav');
+                    $('.text-menu').click(function(){
+                        $('.nav-sab').toggleClass('mobile-menu');
+                        $('.menu').toggleClass("slide-menu");
+                    });
+                }
+
             },
 
             //---------- 5. Team List -----------
@@ -113,6 +152,153 @@
                 });
             },
 
+            //---------- 6. Isotope Metafizy ----------- 
+            theme_works_isotope: function(){
+                if ($.fn.isotope) {
+                // init Isotope
+                var $grid = $('.grid').isotope({
+                    itemSelector: '.items'
+                });
+                var iso = $grid.data('isotope');
+                var $filterCount = $('.filter-title');
+
+                // filter functions
+                var filterFns = {
+                    // show if number is greater than 50
+                    numberGreaterThan50: function() {
+                        var number = $(this).find('.number').text();
+                        return parseInt( number, 10 ) > 50;
+                    },
+                    // show if name ends with -ium
+                    ium: function() {
+                        var name = $(this).find('.name').text();
+                        return name.match( /ium$/ );
+                    }
+                };
+
+                $('.portfolio-sab--filter a').on( 'click', function() {
+                    var filterValue = $( this ).attr('data-filter');
+                    // use filterFn if matches value
+                    filterValue = filterFns[ filterValue ] || filterValue;
+                    $grid.isotope({ filter: filterValue });
+                    updateFilterCount();
+                    return false;
+                });
+
+                function updateFilterCount() {
+                    $filterCount.text( 'We Found ' + iso.filteredItems.length + ' example design' );
+                  }
+                  
+                  updateFilterCount();
+                  
+                  // change is-checked class on buttons
+                  $('.portfolio-sab--filter a').each( function( i, buttonGroup ) {
+                    var $buttonGroup = $( buttonGroup );
+                    $buttonGroup.on( 'click', function() {
+                      $buttonGroup.find('.is-checked').removeClass('is-checked');
+                      $( this ).addClass('is-checked');
+                    });
+                  });
+
+                  var mySwiper = new Swiper ('.sab-work-page .swiper-container', {
+                    // Optional parameters
+                    loop: true,
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                
+                    // If we need pagination
+                    pagination: {
+                      el: '.swiper-pagination',
+                      type: 'custom'
+                    },
+                
+                    // Navigation arrows
+                    navigation: {
+                      nextEl: '.swiper-button-next',
+                      prevEl: '.swiper-button-prev',
+                    },
+                
+                    // And if we need scrollbar
+                    scrollbar: {
+                      el: '.swiper-scrollbar',
+                    },
+                  })
+                }
+            },
+
+            //---------- 6. Testimonial Section ----------- 
+            theme_testi: function() {
+                var swiper = new Swiper('.testimony-sab-slide', {
+                      direction: 'vertical',
+                      effect: 'fade',
+                      pagination: {
+                        el: '.testi-sab-pagination',
+                        clickable: true,
+                      },
+                  });
+            }, 
+
+            //---------- 4. Work Section -----------
+            theme_works: function() {
+                var swiper = new Swiper('.works-sab-slide', {
+                        slidesPerView: 3,
+                        spaceBetween: 60,
+                        loop: true,
+                        pagination: {
+                            el: '.works-sab-pagination',
+                            type: 'fraction',
+                            renderFraction: function (currentClass, totalClass) {
+                                  return '<span class="' + currentClass + '"></span>' +
+                                         ' <span class="sp-line"></span>' +
+                                         '<span class="' + totalClass + '"></span>';
+                              }
+                        },
+                        navigation: {
+                        nextEl: '.swiper-button-next',
+                        //prevEl: '.works-sab-pagination',
+                        },
+                        breakpoints: {
+                        // when window width is <= 480px
+                        480: {
+                          slidesPerView: 1,
+                          spaceBetween: 20
+                        },
+                        // when window width is <= 640px
+                        640: {
+                          slidesPerView: 3,
+                          spaceBetween: 30
+                        }
+                        }
+                  });
+            },
+
+            //---------- 6. Header Slider -----------
+            theme_header: function() {
+                var swiper = new Swiper('.header-sab-slide', {
+                      direction: 'vertical',
+                      slidesPerView: 1,
+                      mousewheel: false,
+                      pagination: {
+                            el: '.header-sab-pagination',
+                            clickable: true,
+                            renderBullet: function (index, className) {
+                              return '<span class="' + className + '">0' + (index + 1) + '</span>';
+                            },
+                      },
+                  });
+            },  
+ 
+            //---------- 6. Header Slider -----------
+            theme_menu_work: function() {
+                 $('#fullpage').fullpage({
+                  anchors: ['website', 'ecommerce', 'custom', 'mobile', 'marketing', 'content'],
+                  menu: '#menu',
+                  scrollingSpeed : 1000,
+                  
+                });
+            },  
+
+
             // theme init
             theme_init: function() {
                 SAB.theme_scrollUP();
@@ -120,6 +306,11 @@
                 SAB.theme_counter();
                 SAB.theme_nav();
                 SAB.theme_team_list();
+                SAB.theme_works_isotope();
+                SAB.theme_works();
+                SAB.theme_testi();
+                SAB.theme_header();
+                //SAB.theme_menu_work();
             }
 
         } //end SAB
