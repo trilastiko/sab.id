@@ -13,54 +13,10 @@
                  });
             },
 
-            //----------- 2. Google Maps ----------- 
-            theme_map: function() {
-                if (typeof google === 'object' && typeof google.maps === 'object') {
-                function initialize() {
-                    var myLatlng = new google.maps.LatLng(-6.238845, 106.812077);
-                    var imagePath = 'https://www.sabtech.id/wp-content/uploads/2019/04/google-location-icon-sab.png'
-                    var mapOptions = {
-                        zoom: 19,
-                        center: myLatlng,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    }
 
-                    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-                    //Callout Content
-                    var contentString = 'Sinergi Antar Benua (SAB)';
-                    //Set window width + content
-                    var infowindow = new google.maps.InfoWindow({
-                        content: contentString,
-                        maxWidth: 500
-                    });
-
-                    //Add Marker
-                    var marker = new google.maps.Marker({
-                        position: myLatlng,
-                        map: map,
-                        icon: imagePath,
-                        title: 'image title'
-                    });
-
-                    google.maps.event.addListener(marker, 'click', function() {
-                        infowindow.open(map, marker);
-                    });
-
-                    //Resize Function
-                    google.maps.event.addDomListener(window, "resize", function() {
-                        var center = map.getCenter();
-                        google.maps.event.trigger(map, "resize");
-                        map.setCenter(center);
-                    });
-                }
-
-                google.maps.event.addDomListener(window, 'load', initialize);
-                }
-            },
-
-            //----------- 3. Counter ----------- 
+            //----------- 2. Counter ----------- 
             theme_counter: function() {
-
+                if ( $( ".count-sab" ).length ) {
                 $(window).scroll(testScroll);
                 var viewed = false;
 
@@ -90,15 +46,11 @@
                     });
                   }
                 }
-                /*if ($.fn.counterUp) {
-                    $('.counter').counterUp({
-                        delay: 10,
-                        time: 1000
-                    });
-                }*/
+
+              }
             },
 
-            //---------- 4. Fixed Navigation Menu -----------
+            //---------- 3. Fixed Navigation Menu -----------
             theme_nav: function() {
                 $(window).bind('scroll', function() {
                      if ($(window).scrollTop() >= 100) {
@@ -119,10 +71,9 @@
                         $('.menu').toggleClass("slide-menu");
                     });
                 }
-
             },
 
-            //---------- 5. Team List -----------
+            //---------- 4. Team List -----------
             theme_team_list: function() {
                 var a = $('.team-list'),
                     b = $('.sab-member-list');
@@ -152,15 +103,30 @@
                 });
             },
 
-            //---------- 6. Isotope Metafizy ----------- 
+            //---------- 5. Isotope Metafizy ----------- 
             theme_works_isotope: function(){
                 if ($.fn.isotope) {
                 // init Isotope
                 var $grid = $('.grid').isotope({
                     itemSelector: '.items'
                 });
+
                 var iso = $grid.data('isotope');
                 var $filterCount = $('.filter-title');
+
+                $grid.infiniteScroll({
+                    // Infinite Scroll options...
+                    append: '.items',
+                    outlayer: iso,
+                    path: '.pagination__next' ,
+                    // status: '.page-load-status',
+                    button: '.view-more-button',
+                    // using button, disable loading on scroll 
+                    scrollThreshold: false,
+                    hideNav: '.pagination__next'
+                });
+
+                var infScroll = $grid.data('infiniteScroll');
 
                 // filter functions
                 var filterFns = {
@@ -179,17 +145,34 @@
                 $('.portfolio-sab--filter a').on( 'click', function() {
                     var filterValue = $( this ).attr('data-filter');
                     // use filterFn if matches value
+                    $grid.infiniteScroll({
+                        // Infinite Scroll options...
+                        append: '.items',
+                        outlayer: iso,
+                        path: '.pagination__next' ,
+                        // status: '.page-load-status',
+                        button: '.view-more-button',
+                        // using button, disable loading on scroll 
+                        scrollThreshold: false,
+                        hideNav: '.pagination__next'
+                    });
                     filterValue = filterFns[ filterValue ] || filterValue;
                     $grid.isotope({ filter: filterValue });
                     updateFilterCount();
+
+
                     return false;
                 });
 
                 function updateFilterCount() {
                     $filterCount.text( 'We Found ' + iso.filteredItems.length + ' example design' );
-                  }
+                }
                   
                   updateFilterCount();
+
+                  $grid.on( 'append.infiniteScroll', function() {
+                    updateFilterCount();
+                  });
                   
                   // change is-checked class on buttons
                   $('.portfolio-sab--filter a').each( function( i, buttonGroup ) {
@@ -199,6 +182,8 @@
                       $( this ).addClass('is-checked');
                     });
                   });
+
+                   }
 
                   var mySwiper = new Swiper ('.sab-work-page .swiper-container', {
                     // Optional parameters
@@ -222,12 +207,22 @@
                     scrollbar: {
                       el: '.swiper-scrollbar',
                     },
+
+                    // Set Responsive View
+                    breakpoints: {
+                        // when window width is <= 425px
+                        425: {
+                          slidesPerView: 1,
+                          spaceBetween: 0
+                        },
+                      }
                   })
-                }
+               
             },
 
             //---------- 6. Testimonial Section ----------- 
             theme_testi: function() {
+                if ( $( ".testimony-sab-slide" ).length ) {
                 var swiper = new Swiper('.testimony-sab-slide', {
                       direction: 'vertical',
                       effect: 'fade',
@@ -235,17 +230,29 @@
                         el: '.testi-sab-pagination',
                         clickable: true,
                       },
+                      autoplay: {delay: 3000},
                   });
+                }
             }, 
 
-            //---------- 4. Work Section -----------
+            //---------- 7. Work Section -----------
             theme_works: function() {
-                var swiper = new Swiper('.works-sab-slide', {
+
+              if ( $( ".works-sab-slide" ).length ) {
+
+                $(".works-sab-slide").each(function(index, element){
+                    var $this = $(this);
+                    $this.addClass("instance-" + index);
+                    $this.find(".swiper-button-prev").addClass("btn-prev-" + index);
+                    $this.find(".swiper-button-next").addClass("btn-next-" + index);
+                    $this.find(".swiper-pagination").addClass("swiper-pagination-" + index);
+                    var swiper = new Swiper(".instance-" + index, {
+                        
                         slidesPerView: 3,
-                        spaceBetween: 60,
+                        spaceBetween: 0,
                         loop: true,
                         pagination: {
-                            el: '.works-sab-pagination',
+                            el: '.swiper-pagination-' + index,
                             type: 'fraction',
                             renderFraction: function (currentClass, totalClass) {
                                   return '<span class="' + currentClass + '"></span>' +
@@ -254,30 +261,94 @@
                               }
                         },
                         navigation: {
-                        nextEl: '.swiper-button-next',
+                        nextEl: '.btn-next-' + index,
                         //prevEl: '.works-sab-pagination',
                         },
                         breakpoints: {
-                        // when window width is <= 480px
-                        480: {
-                          slidesPerView: 1,
-                          spaceBetween: 20
-                        },
-                        // when window width is <= 640px
-                        640: {
-                          slidesPerView: 3,
-                          spaceBetween: 30
+                            // when window width is <= 480px
+                            480: {
+                              slidesPerView: 1,
+                              spaceBetween: 0
+                            },
+                            // when window width is <= 640px
+                            640: {
+                              slidesPerView: 1,
+                              spaceBetween: 0
+                            }
                         }
-                        }
-                  });
+
+                    });
+                });
+
+
+                $('.nav-works-sab li a').bind('click', function(e) {
+
+                    e.preventDefault(); // prevent hard jump, the default behavior
+                    var headerHeight = $("header.nav-sab").outerHeight();
+                    var target = $(this).attr("href"); // Set the target as variable
+                    var scrollToPosition = $(target).offset().top - headerHeight;
+
+
+                    $('html').animate({ 'scrollTop': scrollToPosition }, 600, function(){
+                        window.location.hash = "" + target;
+                        $('html').animate({ 'scrollTop': scrollToPosition }, 0);
+                    });
+
+                    return false;
+                });
+
+
+                
+
+                $(window).scroll(function() {
+
+                    if ( $( ".works-container" ).length ) {
+                    var headerHeight = $("header.nav-sab").outerHeight(true);
+                    var scrollDistance = $(window).scrollTop();
+                    var top = $(window).scrollTop() - $('.works-container').offset().top + 180;
+                    var top2 = $(window).scrollTop() - $('.servis-category-sab').offset().top + 540;
+                    var body = $('body').scrollTop();
+
+                    if(body < top2){
+                        $('.nav-works-sab').css({'position':'static', 'top': 'auto', 'width' : 'auto'});
+                    }else if(body <= top){
+                        $('.nav-works-sab').css({'position':'fixed', 'top': '120px', 'width' : 'auto'}).fadeIn('fast');
+                    }else{
+                        $('.nav-works-sab').css({'position':'static', 'top': 'auto', 'width' : 'auto'});
+                    }
+
+                     // Assign active class to nav links while scolling
+                    var sections = $('.works-sab-slide');
+                    var currentScroll = $(this).scrollTop();
+                    var currentSection;
+                    sections.each(function(i){      
+                      var divPosition = $(this).offset().top;
+                      if( divPosition - 200 < currentScroll ){
+                        currentSection = $(this);
+                         $('.nav-works-sab a.active').removeClass('active');
+                         $('.nav-works-sab a').eq(i).addClass('active');
+                      }
+                      
+                      
+                    })
+                    }
+
+                });
+
+              }
+
             },
 
-            //---------- 6. Header Slider -----------
+            //---------- 8. Header Slider -----------
             theme_header: function() {
+                if ( $( ".header-sab-slide" ).length ) {
                 var swiper = new Swiper('.header-sab-slide', {
                       direction: 'vertical',
                       slidesPerView: 1,
                       mousewheel: false,
+                      autoplay: {
+                        delay: 5000,
+                      },
                       pagination: {
                             el: '.header-sab-pagination',
                             clickable: true,
@@ -286,23 +357,44 @@
                             },
                       },
                   });
-            },  
- 
-            //---------- 6. Header Slider -----------
-            theme_menu_work: function() {
-                 $('#fullpage').fullpage({
-                  anchors: ['website', 'ecommerce', 'custom', 'mobile', 'marketing', 'content'],
-                  menu: '#menu',
-                  scrollingSpeed : 1000,
-                  
-                });
-            },  
+              }
+            },
 
+            //---------- 9. logo Slider -----------
+            theme_client_slide: function() {
+                if ( $( ".client-sab-slide" ).length ) {
+                var swiper = new Swiper('.client-sab-slide', {
+                    slidesPerView: 6,
+                    slidesPerGroup: 1,
+                    loop: true,
+                    autoplay: {delay: 3000},
+
+                    breakpoints: {
+                        // when window width is <= 480px
+                        480: {
+                          slidesPerView: 2,
+                          spaceBetween: 20
+                        },
+                        // when window width is <= 768px
+                        768: {
+                          slidesPerView: 3,
+                          spaceBetween: 20
+                        },
+                        // when window width is <= 1024px
+                        1024: {
+                          slidesPerView: 5,
+                          spaceBetween: 20
+                        }
+                    }
+
+                });
+                }
+            },    
+ 
 
             // theme init
             theme_init: function() {
                 SAB.theme_scrollUP();
-                SAB.theme_map();
                 SAB.theme_counter();
                 SAB.theme_nav();
                 SAB.theme_team_list();
@@ -310,7 +402,7 @@
                 SAB.theme_works();
                 SAB.theme_testi();
                 SAB.theme_header();
-                //SAB.theme_menu_work();
+                SAB.theme_client_slide();
             }
 
         } //end SAB

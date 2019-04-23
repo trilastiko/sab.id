@@ -22,7 +22,8 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    
 
     <!--Custom styles for this template-->
     <link href="assets/stylesheets/css/animate.css" rel="stylesheet">
@@ -39,6 +40,58 @@
     .success{color: #fff;}
     #loading-image{position: absolute; right: -70px; top: 0px}
     </style>
+    <script src="assets/javascripts/jquery-3.3.0.min.js"></script>
+    <script type="text/javascript">
+        
+        function sendContact() {
+            var valid;  
+            valid = validateContact();
+            if(valid) {
+                jQuery.ajax({
+                url: "contact_mail.php",
+                data:'userName='+$("#name").val()+'&userEmail='+$("#email").val()+'&message='+$('#msg').val(),
+                type: "POST",
+                beforeSend: function() {
+                  $("#loading-image").show();
+                },
+                success:function(data){
+                  $("#mail-status").html(data);
+                  $("#loading-image").hide();
+                },
+                error:function (){}
+                });
+            }
+        }
+
+        function validateContact() {
+            var valid = true;   
+            $(".inputBox").css('background-color','');
+            $(".info-mail").html('');
+            
+            if(!$("#name").val()) {
+                $("#name-info").html("(required)");
+                $("#name").css('background-color','#FFFFDF');
+                valid = false;
+            }
+            if(!$("#email").val()) {
+                $("#email-info").html("(required)");
+                $("#email").css('background-color','#FFFFDF');
+                valid = false;
+            }
+            if(!$("#email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+                $("#email-info").html("(invalid)");
+                $("#email").css('background-color','#FFFFDF');
+                valid = false;
+            }
+            if(!$("#msg").val()) {
+                $("#msg-info").html("(required)");
+                $("#msg").css('background-color','#FFFFDF');
+                valid = false;
+            }
+            
+            return valid;
+        }
+    </script>
 </head>
 
 <body>
@@ -47,9 +100,9 @@
             <div class="row align-items-center">
                 <div class="col text-left"><a href="https://sab.id"><img src="images/logo.png" alt="Sinergi Antar Benua"/></a></div>
                 <div class="col text-menu text-right visible-xs">Menu</div>
-                <div class="menu-wrapper">
+                <div class="col text-center hidden-xs">
                     <ul class="nav nav-list">
-                        <li><a href="index.html"> Home </a></li>
+                        <li><a class="active" href="#"> Home </a></li>
                         <li><a href="service.html"> Service </a></li>
                         <li><a href="about.html"> About </a></li>
                         <li><a href="work.html"> Works</a></li>
@@ -154,7 +207,8 @@ isn't anything embarrassing.</p>
                     </ul>
                 </div>
                 <div class="col-sm-10">
-                    <div class="works-begin">
+
+                  <div class="works-begin">
                  
                   <div class="works-sab-slide swiper-container" id="1">
                         <h3>Websites</h3>
@@ -543,11 +597,12 @@ isn't anything embarrassing.</p>
 
 
                 </div><!-- End Work Slide -->
+
                 </div>
             </div>
         </div>
     </section>
-    <section class="servis-category-sab mar-btm-50">
+    <section class="services-sab mar-btm-50">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -562,32 +617,31 @@ isn't anything embarrassing.</p>
                 <div class="col">&nbsp;</div>
             </div>
         </div>
-        <div class="container text-center">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-12 ">
+                <div class="col-lg-12">
                     <div class="row">
-                        <div class="col-sm-4">
-                            <div class="icon-wrapper"><i class="flaticon-monitor cloudy"></i></div>
+                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-monitor"></i></div>
                             <h3 class="semibold">Website</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
-                        <div class="col-sm-4"><div class="icon-wrapper"><i class="flaticon-shopping-1 cloudy"></i></div>
+                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-shopping-1"></i></div>
                             <h3 class="semibold">E-Commerce</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
-                        <div class="col-sm-4"><div class="icon-wrapper"><i class="flaticon-cms cloudy"></i></div>
+                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-cms"></i></div>
                             <h3 class="semibold">Custom Software</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
-                        <div class="col-sm-4"><div class="icon-wrapper"><i class="flaticon-mobile-shopping cloudy"></i></div>
+                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-mobile-shopping"></i></div>
                             <h3 class="semibold">Mobile Apps</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
-                        <div class="col-sm-4"><div class="icon-wrapper"><i class="flaticon-shopping cloudy"></i></div>
+                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-shopping"></i></div>
                             <h3 class="semibold">Marketing</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
-                        <div class="col-sm-4"><div class="icon-wrapper"><i class="flaticon-writing cloudy"></i></div>
+                        <div class="col-sm-4"><div class="mar-pad-70"><i class="flaticon-writing"></i></div>
                             <h3 class="semibold">Content Creation</h3>
                             <p class="mar-btm-50">Duis dapibus eros non nisi modern sollicitudin sollicitudin.</p>
                         </div>
@@ -600,52 +654,41 @@ isn't anything embarrassing.</p>
             <div class="row">
                 <div class="col-sm-12">
                     <h2 class="text-center font-bold">Our Precious Client</h2>
-                    <div class="client-sab-slide swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client1.jpg"></div>
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client2.jpg"></div>
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client3.jpg"></div>
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client4.jpg"></div>
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client5.jpg"></div>
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client6.jpg"></div>
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client1.jpg"></div>
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client2.jpg"></div>
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client3.jpg"></div>
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client4.jpg"></div>
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client5.jpg"></div>
-                            <div class="swiper-slide"><img class="city-img" src="images/logo-client6.jpg"></div>
-                        </div>
-                    </div>
+                    <ul class="client-sab">
+                        <li><img class="city-img" src="images/logo-client1.jpg"></li>
+                        <li><img class="city-img" src="images/logo-client2.jpg"></li>
+                        <li><img class="city-img" src="images/logo-client3.jpg"></li>
+                        <li><img class="city-img" src="images/logo-client4.jpg"></li>
+                        <li><img class="city-img" src="images/logo-client5.jpg"></li>
+                        <li><img class="city-img" src="images/logo-client6.jpg"></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
     <section class="testimony-sab">
         <div class="container">
-            <div class="testi-wrapper" >
+            
             <div class="testimony-sab-slide">
                 <h2>Testimonials</h2>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="testi-text">
-                            <p>“ Dapibus eros non nisi modern sollicitudin sollicitudin. Moment of life :) ”</p><b>- Rony Mouldy</b>
-                        </div>
+                        
+                        <p>“ Dapibus eros non nisi modern sollicitudin sollicitudin. Moment of life :) ”</p><b>- Rony Mouldy</b>
                     </div>
                     <div class="swiper-slide">
-                       <div class="testi-text">
+                       
                         <p>“ Many Thanks ”</p><b>- Aurieala Montique</b>
-                        </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="testi-text">
+                     
                         <p>“ Wow amazing content ever, I can't believe work with sab ”</p><b>- Meidana Moasaas</b>
-                        </div>
                     </div>
                 </div>
                 <!-- Add Pagination -->
                 <div class="testi-sab-pagination swiper-pagination"></div>
             </div>
-            </div>
+
         </div>
     </section>
     <section class="count-sab">
@@ -751,7 +794,8 @@ isn't anything embarrassing.</p>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="container-map">
-                        <a href="https://www.google.com/maps/place/Sinergi+Antar+Benua/@-6.2394641,106.8126183,17.04z/data=!4m5!3m4!1s0x0:0x410415fa4021bf0a!8m2!3d-6.238843!4d106.812041" target="_blank"><div class="map"></div></a>              
+                        <div id="map_container"></div>
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
@@ -799,61 +843,10 @@ isn't anything embarrassing.</p>
             </div>
         </div>
     </footer>
-
-    <script src="assets/javascripts/jquery-3.3.0.min.js"></script>
     <script src="assets/javascripts/custom.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyA1UhCOI_7cG8aUBP9FYDef3LXLRoG72CI"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
-    <script type="text/javascript">
-        
-        function sendContact() {
-            var valid;  
-            valid = validateContact();
-            if(valid) {
-                jQuery.ajax({
-                url: "contact_mail.php",
-                data:'userName='+$("#name").val()+'&userEmail='+$("#email").val()+'&message='+$('#msg').val(),
-                type: "POST",
-                beforeSend: function() {
-                  $("#loading-image").show();
-                },
-                success:function(data){
-                  $("#mail-status").html(data);
-                  $("#loading-image").hide();
-                },
-                error:function (){}
-                });
-            }
-        }
 
-        function validateContact() {
-            var valid = true;   
-            $(".inputBox").css('background-color','');
-            $(".info-mail").html('');
-            
-            if(!$("#name").val()) {
-                $("#name-info").html("(required)");
-                $("#name").css('background-color','#FFFFDF');
-                valid = false;
-            }
-            if(!$("#email").val()) {
-                $("#email-info").html("(required)");
-                $("#email").css('background-color','#FFFFDF');
-                valid = false;
-            }
-            if(!$("#email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
-                $("#email-info").html("(invalid)");
-                $("#email").css('background-color','#FFFFDF');
-                valid = false;
-            }
-            if(!$("#msg").val()) {
-                $("#msg-info").html("(required)");
-                $("#msg").css('background-color','#FFFFDF');
-                valid = false;
-            }
-            
-            return valid;
-        }
-    </script>
 </body>
 
 </html>
