@@ -64,7 +64,7 @@
                      }
                 });
 
-                if ($(window).width() < 767) {
+                if ($(window).width() < 480) {
                     $('.nav').addClass('menu').removeClass('nav');
                     $('.text-menu').click(function(){
                         $('.nav-sab').toggleClass('mobile-menu');
@@ -222,17 +222,26 @@
 
             //---------- 6. Testimonial Section ----------- 
             theme_testi: function() {
-                if ( $( ".testimony-sab-slide" ).length ) {
                 var swiper = new Swiper('.testimony-sab-slide', {
                       direction: 'vertical',
                       effect: 'fade',
-                      pagination: {
-                        el: '.testi-sab-pagination',
-                        clickable: true,
-                      },
-                      autoplay: {delay: 3000},
+                      autoHeight: true, 
+                        loop: true,
+                        pagination: {
+                            el: '.testi-sab-pagination',
+                            type: 'fraction',
+                            renderFraction: function (currentClass, totalClass) {
+                                  return '<span class="' + currentClass + '"></span>' +
+                                         ' <span class="sp-line"></span>' +
+                                         '<span class="' + totalClass + '"></span>';
+                              }
+                        },
+                        navigation: {
+                            nextEl: '.testi-sab-button-next',
+                            prevEl: '.testi-sab-pagination',
+                        },
+                      //autoplay: {delay: 3000},
                   });
-                }
             }, 
 
             //---------- 7. Work Section -----------
@@ -248,8 +257,8 @@
                     $this.find(".swiper-pagination").addClass("swiper-pagination-" + index);
                     var swiper = new Swiper(".instance-" + index, {
                         
-                        slidesPerView: 3,
-                        spaceBetween: 0,
+                        slidesPerView: 'auto',
+                        spaceBetween: 10,
                         loop: true,
                         pagination: {
                             el: '.swiper-pagination-' + index,
@@ -264,18 +273,7 @@
                         nextEl: '.btn-next-' + index,
                         //prevEl: '.works-sab-pagination',
                         },
-                        breakpoints: {
-                            // when window width is <= 480px
-                            480: {
-                              slidesPerView: 1,
-                              spaceBetween: 0
-                            },
-                            // when window width is <= 640px
-                            640: {
-                              slidesPerView: 1,
-                              spaceBetween: 0
-                            }
-                        }
+          
 
                     });
                 });
@@ -298,7 +296,7 @@
                 });
 
 
-                
+            if ($(window).width() > 767) {
 
                 $(window).scroll(function() {
 
@@ -334,7 +332,7 @@
                     }
 
                 });
-
+                }
               }
 
             },
@@ -409,9 +407,10 @@
 
 
     $(document).ready(function() {
-
         SAB.theme_init();
-
+    });
+    $(window).resize(function(){
+        SAB.theme_nav();
     });
 
 })(jQuery);
