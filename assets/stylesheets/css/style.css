@@ -1211,10 +1211,14 @@ section.hero-images .whale-img {
     vertical-align: middle;
     background-color: #a8b5d3
 }
-
+@media only screen and (max-width: 1024px) {
+    .nav-works-sab a {
+        font-size: 14px;
+    }
+}
 @media only screen and (max-width: 768px) {
     .nav-works-sab a {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 
