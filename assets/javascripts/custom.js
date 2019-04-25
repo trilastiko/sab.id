@@ -65,10 +65,15 @@
                 });
 
                 if ($(window).width() < 480) {
+
                     $('.nav').addClass('menu').removeClass('nav');
-                    $('.text-menu').click(function(){
+                    $('.text-menu').click(function(e){
+                        e.stopPropagation();
                         $('.nav-sab').toggleClass('mobile-menu');
                         $('.menu').toggleClass("slide-menu");
+                    });
+                    $(document.body).click( function(e) {
+                         $('.menu').removeClass("slide-menu");
                     });
                 }
             },
