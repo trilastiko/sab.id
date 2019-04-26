@@ -383,7 +383,9 @@ p {
 }
 
 /* Mobile */
-@media (max-width: 450px) {
+@media (max-width: 480px) {
+    #mainnav{visibility: hidden;}
+    .d-sm-none{display: none}
     .text-menu {
         position: relative;
         z-index: 100;
@@ -402,12 +404,14 @@ p {
         background: #21408b;
         color: #232323;
         height: 100%;
-        width: 250px;
+        width:250px;
         top: 0;
-        right: -300px;
-        -webkit-transition: right 0.2s;
-        transition: right 0.2s;
+        right: -250px;
+        -webkit-transition: right 0.1s;
+        transition: right 0.1s;
         padding: 60px 20px 20px 20px;
+        visibility: hidden;
+        opacity: 0
     }
 
     .menu ul {
@@ -428,7 +432,11 @@ p {
 
     .slide-menu {
         right: 0 !important;
+        opacity: 1;
+        visibility: visible;
     }
+
+    .slide-menu .d-sm-none{display: block;}
 }
 
 
@@ -447,7 +455,7 @@ p {
     margin-left: 10px;
     font-size: 20px;
     color: #FFFFFF;
-    transition: all 0.45s;
+    transition: background 0.45s;
 
 }
 

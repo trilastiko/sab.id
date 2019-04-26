@@ -65,16 +65,23 @@
                 });
 
                 if ($(window).width() < 480) {
-
-                    $('.nav').addClass('menu').removeClass('nav');
                     $('.text-menu').click(function(e){
                         e.stopPropagation();
+                        $('#mainnav').css({'visibility' : 'visible'});
                         $('.nav-sab').toggleClass('mobile-menu');
                         $('.menu').toggleClass("slide-menu");
                     });
                     $(document.body).click( function(e) {
                          $('.menu').removeClass("slide-menu");
                     });
+                }
+            },
+
+            theme_nav_mobile: function() {
+                if ($(window).width() < 480) {
+                  $('#mainnav').addClass('menu').removeClass('nav');
+                }else{
+                  $('#mainnav').addClass('nav').removeClass('menu');
                 }
             },
 
@@ -110,7 +117,8 @@
 
             //---------- 5. Isotope Metafizy ----------- 
             theme_works_isotope: function(){
-                if ($.fn.isotope) {
+                if ($.isFunction(window.isotope)) {
+                
                 // init Isotope
                 var $grid = $('.grid').isotope({
                     itemSelector: '.items'
@@ -188,7 +196,9 @@
                     });
                   });
 
-                   }
+                  }
+
+                  if ( $( ".sab-work-page" ).length ) {
 
                   var mySwiper = new Swiper ('.sab-work-page .swiper-container', {
                     // Optional parameters
@@ -222,11 +232,13 @@
                         },
                       }
                   })
+                }
                
             },
 
             //---------- 6. Testimonial Section ----------- 
             theme_testi: function() {
+              if ( $( ".testimony-sab-slide" ).length ) {
                 var swiper = new Swiper('.testimony-sab-slide', {
                       direction: 'vertical',
                       effect: 'fade',
@@ -248,6 +260,7 @@
                         },
                       
                   });
+              }
             }, 
 
             //---------- 7. Work Section -----------
@@ -401,6 +414,7 @@
                 SAB.theme_scrollUP();
                 SAB.theme_counter();
                 SAB.theme_nav();
+                SAB.theme_nav_mobile();
                 SAB.theme_team_list();
                 SAB.theme_works_isotope();
                 SAB.theme_works();
@@ -414,6 +428,10 @@
 
     $(document).ready(function() {
         SAB.theme_init();
+    });
+
+    $(window).resize(function(){
+        SAB.theme_nav_mobile();
     });
 
 })(jQuery);
