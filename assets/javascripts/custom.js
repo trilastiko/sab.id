@@ -231,6 +231,7 @@
                       direction: 'vertical',
                       effect: 'fade',
                       autoHeight: true, 
+                       autoplay: {delay: 3000},
                         loop: true,
                         pagination: {
                             el: '.testi-sab-pagination',
@@ -245,7 +246,7 @@
                             nextEl: '.testi-sab-button-next',
                             prevEl: '.testi-sab-pagination',
                         },
-                      //autoplay: {delay: 3000},
+                      
                   });
             }, 
 
@@ -413,9 +414,6 @@
 
     $(document).ready(function() {
         SAB.theme_init();
-    });
-    $(window).resize(function(){
-        SAB.theme_nav();
     });
 
 })(jQuery);
