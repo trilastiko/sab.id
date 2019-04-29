@@ -55,12 +55,12 @@
                 $(window).bind('scroll', function() {
                      if ($(window).scrollTop() >= 100) {
                          $('.nav-sab').addClass('fixed');
-                         $('.nav-sab.fixed').find('img').attr('src','images/logo-white.png');
+                         $('.nav-sab.fixed').find('img').attr('src','images/logo-white.svg');
                      }
                      else {
                          $('.nav-sab').removeClass('fixed');
-                         $('.nav-sab').find('img').attr('src','images/logo.png');
-                         $('.nav-sab.transparent').find('img').attr('src','images/logo-white.png');
+                         $('.nav-sab').find('img').attr('src','images/logo.svg');
+                         $('.nav-sab.transparent').find('img').attr('src','images/logo-white.svg');
                      }
                 });
 
@@ -279,6 +279,8 @@
                         slidesPerView: 'auto',
                         spaceBetween: 10,
                         loop: true,
+                        lazy: true,
+                        watchSlidesVisibility:true,
                         pagination: {
                             el: '.swiper-pagination-' + index,
                             type: 'fraction',
@@ -384,6 +386,8 @@
                     slidesPerView: 6,
                     slidesPerGroup: 1,
                     loop: true,
+                    lazy: true,
+                    watchSlidesVisibility:true,
                     autoplay: {delay: 3000},
 
                     breakpoints: {
