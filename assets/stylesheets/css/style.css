@@ -322,6 +322,7 @@ p {
     color: #fff
 }
 
+.nav-sab.fixed a img{ width: 52px; height: 51px; }
 
 .nav-sab .nav li {
     display: inline-block;
@@ -848,7 +849,7 @@ section.hero-images .whale-img {
 
 .bg-hero-images {
     position: relative;
-    background: url("../../../images/paus.png") no-repeat top center;
+    background: url("../../../images/paus.svg") no-repeat top center;
     height: 675px;
     background-position-y: 30px;
 }
@@ -1003,8 +1004,9 @@ section.hero-images .whale-img {
     padding: 0;
     position: relative;
     width: 690px;
-    height: 230px;
-    margin: 315px auto;
+    height: 370px;
+    margin: 255px auto;
+    overflow: hidden;
 }
 
 .testimony-sab h2 {
@@ -1029,7 +1031,7 @@ section.hero-images .whale-img {
     width: 80%;
     font-size: 24px;
     font-style: italic;
-    margin-bottom: 2em
+    margin-bottom: 1em
 }
 
 .testimony-sab .swiper-container-vertical>.swiper-pagination-bullets {
@@ -1815,7 +1817,7 @@ section.hero-images .whale-img {
 }
 
 .blue-section * {
-    color: #959fc1;
+    color: #fff;
 }
 
 .blue-section i {
@@ -2021,8 +2023,7 @@ dl.info dd {
     margin-bottom: 0
 }
 
-.sab-work-page section.hero-images .city-img {
-    max-height: 426px;
+.sab-work-page section.hero-images img {
     border-radius: 5px;
 }
 
