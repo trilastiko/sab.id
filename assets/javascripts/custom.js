@@ -117,7 +117,7 @@
 
             //---------- 5. Isotope Metafizy ----------- 
             theme_works_isotope: function(){
-                if ($.isFunction(window.isotope)) {
+                if ($.fn.isotope) {
                 
                 // init Isotope
                 var $grid = $('.grid').isotope({
