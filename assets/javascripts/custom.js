@@ -64,7 +64,7 @@
                      }
                 });
 
-                if ($(window).width() < 480) {
+                if ($(window).width() < 767) {
                     $('.text-menu').click(function(e){
                         e.stopPropagation();
                         $('#mainnav').css({'visibility' : 'visible'});
@@ -78,7 +78,7 @@
             },
 
             theme_nav_mobile: function() {
-                if ($(window).width() < 480) {
+                if ($(window).width() < 767) {
                   $('#mainnav').addClass('menu').removeClass('nav');
                 }else{
                   $('#mainnav').addClass('nav').removeClass('menu');
@@ -271,6 +271,10 @@
                         navigation: {
                             nextEl: '.testi-sab-button-next',
                             prevEl: '.testi-sab-pagination',
+                        },
+                         scrollbar: {
+                          el: '.swiper-scrollbar',
+                          draggable: false,
                         },
                       
                   });
