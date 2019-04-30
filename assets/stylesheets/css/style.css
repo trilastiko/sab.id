@@ -2402,6 +2402,12 @@ footer .copyright a:hover{ text-decoration: underline; }
     .menu.slide-menu ul{ margin-bottom: 25px; }
     .menu.slide-menu ul.nav-round li{ display: inline-block; }
 
+    /* Home Slider */
+    .header-sab-slide .swiper-slide {
+        margin-top: 0px;
+    }
+    section.hero-images{ padding-top: 143px;}
+
     /* Home under Slider*/
     .about-sab h2 {
         font-size: 38px;
