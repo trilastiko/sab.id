@@ -1940,6 +1940,7 @@ dl.info dd {
 }
 
 .team-list li.current img,
+.team-list li.active img,
 .team-list img:hover {
     border-color: #3d6ad1;
 }
