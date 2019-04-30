@@ -92,7 +92,15 @@
 
                 b.find('.team-list').each(function(){
 
-                    $(this).find('li').click(function() {
+                    $(this).find('li').click(function(e) {
+                         e.preventDefault(); // prevent hard jump, the default behavior
+                        $(".team-list li").removeClass("active current");
+                        $(this).addClass("active");
+                        
+                        var headerHeight = $("header.nav-sab").outerHeight();
+                        var target = $('#info-people-id');   
+                        $('html, body').animate({ scrollTop: target.offset().top - (headerHeight + 50) }, 500);  
+
                         var name = $(this).attr('data-name'),
                             img = $(this).attr('data-image'),
                             position = $(this).attr('data-position'),
