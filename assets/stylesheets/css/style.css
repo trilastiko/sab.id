@@ -1806,8 +1806,8 @@ section.hero-images .whale-img {
 .process-list li {
     margin-bottom: 30px
 }
-
-.img-our-process {
+.img-our-process{ overflow: hidden; }
+.img-our-process img {
     margin-top: 70px;
     display: block
 }
@@ -2366,7 +2366,12 @@ footer .copyright a:hover{ text-decoration: underline; }
     .tools-sab .col-lg-4.last{border-bottom: transparent;}
 
     dl.info dt{ width: 100%; padding: 0; margin-bottom: 0; }
-    
+
+    /* Services page*/
+    .img-our-process {
+        overflow: inherit;
+        margin: 0 -40px;
+    }    
     /* Form and Map*/
     .info-mail, .info-mail, .info-mail{ display: none; }
     .contact-sab .container-map { display: block; height: 400px; }
