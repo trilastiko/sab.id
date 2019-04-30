@@ -99,7 +99,7 @@
                         
                         var headerHeight = $("header.nav-sab").outerHeight();
                         var target = $('#info-people-id');   
-                        $('html, body').animate({ scrollTop: target.offset().top - (headerHeight + 10) }, 500);  
+                        $('html, body').animate({ scrollTop: target.offset().top - (headerHeight + 15) }, 500);  
 
                         var name = $(this).attr('data-name'),
                             img = $(this).attr('data-image'),
