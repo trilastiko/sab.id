@@ -1868,7 +1868,7 @@ section.hero-images .whale-img {
 
 .sab-about-page .container-map img {
     position: relative;
-    top: -130px;
+    top: -330px;
 }
 
 dl.info {
@@ -2024,7 +2024,8 @@ dl.info dd {
 }
 
 .sab-work-page section.hero-images img {
-    border-radius: 5px;
+    border-radius: 10px;
+    max-width: 100%;
 }
 
 .sab-work-page .hero-images .hero-slider,
@@ -2342,7 +2343,7 @@ footer .copyright a:hover{ text-decoration: underline; }
     /* Contact form and map */
     .contact-sab .contact-details-sab{max-width: 75%;}
     .sab-about-page .container-map img {
-        left: -450px;
+        left: -550px;
     }
     
 
@@ -2367,6 +2368,12 @@ footer .copyright a:hover{ text-decoration: underline; }
 
     dl.info dt{ width: 100%; padding: 0; margin-bottom: 0; }
 
+    /* About */
+    .team-list li{ margin-bottom: 50px; }
+
+    /* work home */
+    .works-sab .swiper-pagination{ top: 8px; }
+
     /* Services page*/
     .img-our-process {
         overflow: inherit;
@@ -2375,7 +2382,7 @@ footer .copyright a:hover{ text-decoration: underline; }
     /* Form and Map*/
     .info-mail, .info-mail, .info-mail{ display: none; }
     .contact-sab .container-map { display: block; height: 400px; }
-    .sab-about-page .container-map img {left: -550px;}
+    .sab-about-page .container-map img {left: -750px;}
 
     /* Footer */
     footer{padding: 65px 0 13px;}
@@ -2403,16 +2410,18 @@ footer .copyright a:hover{ text-decoration: underline; }
 
     /* About */
     .title-section { margin-bottom: 30px; line-height: 1;}
-    .team-list li{ margin-bottom: 25px; }
+    .team-list li{ margin-bottom: 25px; margin-right: 15px; width: 180px; }
     .team-list li:nth-child(2n){margin-right:0;}
     .team-list img{ margin:0 auto 32px;  }
-    .social-text{ font-size:16px; }
+    .social-text{ display: block; margin: 0 0 20px; }
+    .info-people .sp {padding: 0 15px 0 0;}
 
     /* Works in Home */
     .swiper-desc{text-align: left; top: 1px; left: 1px;}
 
     /* Work page*/
-    .sab-work-page section.hero-images .city-img { width: 90%!important; }
+    .sab-work-page section.hero-images .swiper-slide{ text-align: center; }
+    .sab-work-page section.hero-images .swiper-slide img { width: 90%!important; }
 
     /* Tech */
     .tools-sab .mar-btm-80{ margin-bottom: 0; }
@@ -2427,7 +2436,7 @@ footer .copyright a:hover{ text-decoration: underline; }
     /* Form and Map*/
     .info-mail, .info-mail, .info-mail{ display: none; }
     .container-map { height: 300px; }
-    .sab-about-page .container-map img {left: -750px;}
+    .sab-about-page .container-map img {left: -950px;}
 
     /* Footer */
     footer{ text-align: center; }
@@ -2444,6 +2453,21 @@ footer .copyright a:hover{ text-decoration: underline; }
     .to-top{ bottom: 40px; }
 
 }
+
+@media (max-width: 375px) {
+    .header-sab-slide .swiper-slide {
+        width: 95%;
+        margin-left: 20px;
+        margin-top: 0px;
+    }
+    .team-list li{ margin-bottom: 25px; margin-right: 15px; width: 140px; }
+    .bg-hero-images {
+        background-position: top right;
+        background-position-y: 75px;
+    }
+}
+
+
 /*******/
 .mar-top-3p {
     margin-top: 3%;
