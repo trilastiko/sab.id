@@ -1,8 +1,8 @@
-/* 
+/*
 html5doctor.com Reset Stylesheet
 v1.6.1
 Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
+Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 
@@ -1048,7 +1048,7 @@ section.hero-images .whale-img {
 .testimony-sab .swiper-pagination-total:before{content: "0"}
 .testimony-sab .swiper-pagination-fraction .sp-line{ display: inline-block; margin:0 10px;  width: 100px; height: 2px; vertical-align: middle; background-color: #a8b5d3 }
 
-.testimony-sab .swiper-button-next, .testimony-sab .swiper-container-rtl .swiper-button-prev{    
+.testimony-sab .swiper-button-next, .testimony-sab .swiper-container-rtl .swiper-button-prev{
     background-image: url("../../../images/next.svg");
     right: 0px;
     left: auto;
@@ -1148,7 +1148,7 @@ section.hero-images .whale-img {
 }
 
 .works-sab .swiper-button-next {
-    background-image: url("../../../images/nav-swift-r.jpg");
+    background-image: url("../../../images/nav-swift-r.png");
     left: 10px;
     right: auto;
 }
@@ -1163,7 +1163,7 @@ section.hero-images .whale-img {
 
 .works-sab .swiper-button-next,
 .works-sab .swiper-container-rtl .swiper-button-prev {
-    background-image: url("../../../images/nav-swift-r.jpg");
+    background-image: url("../../../images/nav-swift-r.png");
     right: 20vw;
     left: auto;
 }
@@ -2346,13 +2346,13 @@ footer .copyright a:hover{ text-decoration: underline; }
     .sab-about-page .container-map img {
         left: -550px;
     }
-    
+
 
     /* Footer */
     footer{padding: 125px 0 13px;}
     footer .socmed-sab li{ padding-right: 25px; }
-    
-    
+
+
 }
 
 @media (max-width: 768px) {
@@ -2379,7 +2379,7 @@ footer .copyright a:hover{ text-decoration: underline; }
     .img-our-process {
         overflow: inherit;
         margin: 0 -40px;
-    }    
+    }
     /* Form and Map*/
     .info-mail, .info-mail, .info-mail{ display: none; }
     .contact-sab .container-map { display: block; height: 400px; }
