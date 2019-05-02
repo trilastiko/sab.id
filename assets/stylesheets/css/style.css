@@ -383,6 +383,8 @@ p {
     background: #fff
 }
 
+.nav-sab .text-left img{ max-width: 100%; height: 52px; }
+
 /* Mobile */
 @media (max-width: 767px) {
     #mainnav{visibility: hidden;}
@@ -2260,7 +2262,7 @@ footer .link-sab a:after {
     -o-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
 }
-
+.footer-wrapper .wf-logo img{ max-width: 100%; height: 66px; }
 footer p {
     margin: 0 0 17px 0;
     font-weight: 400;
