@@ -970,7 +970,7 @@ section.hero-images .whale-img {
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.client-sab-slide img{ max-width: 100%; height: auto; }
 .client-sab-slide .client-sab-next,
 .client-sab-slide .client-sab-prev {
     opacity: 0;
@@ -2115,7 +2115,7 @@ dl.info dd {
 
 .sab-work-page .portfolio-sab .items .items--image-wrapper {
     width: 100%;
-    padding-top: 65%;
+    padding-top: 67%;
     overflow: hidden;
     position: relative;
 }
@@ -2129,6 +2129,8 @@ dl.info dd {
     right: -100%;
     bottom: -100%;
     left: -100%;
+    border: solid 1px #ccc;
+    padding:10px; 
 }
 
 .sab-work-page .portfolio-sab .items .items--content {

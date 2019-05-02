@@ -256,6 +256,7 @@
                 var swiper = new Swiper('.testimony-sab-slide', {
                       direction: 'vertical',
                       effect: 'fade',
+                      touchRatio: 0,
                       autoHeight: true,
                        autoplay: {delay: 3000},
                         loop: true,
@@ -272,11 +273,6 @@
                             nextEl: '.testi-sab-button-next',
                             prevEl: '.testi-sab-pagination',
                         },
-                         scrollbar: {
-                          el: '.swiper-scrollbar',
-                          draggable: false,
-                        },
-
                   });
               }
             },
