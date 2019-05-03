@@ -862,7 +862,8 @@ section.hero-images .whale-img {
     width: 100%;
     height: 100%;
 }
-
+.swiper-lazy-preloader{ width: 20px; height: 20px; }
+.client-sab .swiper-lazy-preloader{ width: 20px; height: 20px; top: 20%; }
 .swiper-pagination{ z-index: 8 }
 .swiper-pagination-bullet {
     width: 2px;
