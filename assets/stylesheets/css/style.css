@@ -2442,6 +2442,7 @@ footer .copyright a:hover{ text-decoration: underline; }
     /* Works in Home */
     .swiper-desc{text-align: left; top: 1px; left: 1px;}
     .works-container h3{ text-align: left; font-size: 28px; }
+    .works-sab .swiper-pagination {top:5px; right: 0;}
 
     /* Work page*/
     .sab-work-page section.hero-images .swiper-slide{ text-align: center; }
@@ -2528,6 +2529,26 @@ footer .copyright a:hover{ text-decoration: underline; }
     .bg-hero-images {
         background-position: top right;
         background-position-y: 75px;
+    }
+    .works-container h3 {
+        text-align: left;
+        font-size: 22px;
+    }
+    .works-sab .swiper-container img {
+        width: 300px;
+    }
+    .works-sab .swiper-pagination { top: 0px;}
+
+}
+
+@media (max-width: 320px) {
+    .works-sab .swiper-container img {
+        width: 260px;
+    }
+    .works-sab .swiper-pagination-current, .works-sab .swiper-pagination-total {
+        width: 22px;
+        height: 22px;
+        line-height: 35px;
     }
 }
 
