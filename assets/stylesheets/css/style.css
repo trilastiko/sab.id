@@ -862,6 +862,7 @@ section.hero-images .whale-img {
     width: 100%;
     height: 100%;
 }
+
 .swiper-pagination{ z-index: 8 }
 .swiper-pagination-bullet {
     width: 2px;
@@ -1229,8 +1230,8 @@ section.hero-images .whale-img {
 
     .works-sab .swiper-container img {
         opacity: 1;
-        padding: 0;
-        border: 0
+        width: 340px;
+
     }
     .works-sab .swiper-button-next, .works-sab .swiper-button-prev{
         width: 60px;
@@ -2303,6 +2304,19 @@ footer .copyright a:hover{ text-decoration: underline; }
     cursor: pointer;
 
 }
+
+
+#error-wrapper{ 
+    text-align: center; 
+    color: #fff;
+    margin: 0 auto;
+    padding: 100px 0 80px;
+  
+    background: url(../../../images/city.png) #0a2460 no-repeat top center;
+}
+#error-wrapper h1{ font-size: 9em; margin:0;  }
+
+.sab-error-page footer{ padding-top: 65px!important; }
 
 @media (max-width: 1366px) {
     .about-sab h2 { line-height: 1.4; }
