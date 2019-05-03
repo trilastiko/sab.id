@@ -2305,18 +2305,20 @@ footer .copyright a:hover{ text-decoration: underline; }
 
 }
 
-
+/* 404 Page */
 #error-wrapper{ 
     text-align: center; 
     color: #fff;
     margin: 0 auto;
-    padding: 100px 0 80px;
+    padding: 100px 0 93px;
   
     background: url(../../../images/city.png) #0a2460 no-repeat top center;
 }
 #error-wrapper h1{ font-size: 9em; margin:0;  }
 
 .sab-error-page footer{ padding-top: 65px!important; }
+.sab-error-page{ background: #224390 }
+
 
 @media (max-width: 1366px) {
     .about-sab h2 { line-height: 1.4; }
