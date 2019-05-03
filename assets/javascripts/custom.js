@@ -293,7 +293,10 @@
                         slidesPerView: 'auto',
                         spaceBetween: 10,
                         loop: true,
-                        lazy: true,
+                         lazy: {
+                            loadPrevNext: true,
+                            loadOnTransitionStart: true,
+                          },
                         watchSlidesVisibility:true,
                         pagination: {
                             el: '.swiper-pagination-' + index,
@@ -308,7 +311,14 @@
                         nextEl: '.btn-next-' + index,
                         //prevEl: '.works-sab-pagination',
                         },
+                        breakpoints: {
+                            // when window width is <= 480px
+                            480: {
+                              slidesPerView: 1,
+                              spaceBetween: 0
+                            },
 
+                        }
 
                     });
                 });
