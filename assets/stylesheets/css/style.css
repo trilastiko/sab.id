@@ -792,7 +792,7 @@ section.hero-images .item .item-whale {
     }
 }
 
-section.hero-images .item-name h1 {
+section.hero-images .item-name h1, section.hero-images .item-name .slide-title {
     font-size: 72px;
     font-weight: 700;
     line-height: 1.2;
@@ -801,16 +801,14 @@ section.hero-images .item-name h1 {
 }
 
 @media (max-width: 768px) {
-    section.hero-images .item-name h1 {
+    section.hero-images .item-name h1, section.hero-images .item-name .slide-title {
         font-size: 64px;
     }
 }
 
 @media (max-width: 767px) {
     .header-sab-slide .item-name{ width: 85%; }
-    section.hero-images .item-name h1 {
-        font-size: 34px;
-    }
+    section.hero-images .item-name h1, section.hero-images .item-name .slide-title {font-size: 34px;}
 }
 
 section.hero-images .item-name p {
