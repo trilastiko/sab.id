@@ -2468,7 +2468,7 @@ footer .copyright a:hover{ text-decoration: underline; }
     }
 
     /* Testimonial */
-    .testimony-sab .swiper-pagination{ left: auto;  }
+    .testimony-sab .swiper-pagination{ left: auto; top:15px; }
 
     .testimony-sab-slide {
         padding: 0;
