@@ -254,9 +254,7 @@
             theme_testi: function() {
               if ( $( ".testimony-sab-slide" ).length ) {
                 var swiper = new Swiper('.testimony-sab-slide', {
-                      direction: 'vertical',
                       effect: 'fade',
-                      touchRatio: 0,
                       autoHeight: true,
                        autoplay: {delay: 3000},
                         loop: true,
@@ -271,7 +269,7 @@
                         },
                         navigation: {
                             nextEl: '.testi-sab-button-next',
-                            prevEl: '.testi-sab-pagination',
+                            prevEl: '.testi-sab-button-prev',
                         },
                   });
               }
@@ -293,10 +291,10 @@
                         slidesPerView: 'auto',
                         spaceBetween: 10,
                         loop: true,
-                         lazy: {
-                            loadPrevNext: true,
-                            loadOnTransitionStart: true,
-                          },
+                        lazy: {
+                          loadPrevNext: true,
+                          loadOnTransitionStart: true,
+                        },
                         watchSlidesVisibility:true,
                         pagination: {
                             el: '.swiper-pagination-' + index,
