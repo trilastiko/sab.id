@@ -926,7 +926,7 @@ section.hero-images .whale-img {
     color: #FFFFFF;
 }
 
-.about-sab h2 {
+.about-sab h1 {
     font-size: 48px;
     font-weight: bold;
 }
@@ -2322,12 +2322,12 @@ footer .copyright a:hover{ text-decoration: underline; }
 
 
 @media (max-width: 1366px) {
-    .about-sab h2 { line-height: 1.4; }
+    .about-sab h1 { line-height: 1.4; }
 }
 
 @media (max-width: 1024px) {
 
-    .about-sab h2 {
+    .about-sab h1 {
         line-height: 1.4;
         font-size: 40px;
     }
@@ -2430,7 +2430,7 @@ footer .copyright a:hover{ text-decoration: underline; }
     section.hero-images{ padding-top: 143px;}
 
     /* Home under Slider*/
-    .about-sab h2 {
+    .about-sab h1 {
         font-size: 38px;
         line-height: 1.4;
         font-weight: bold;
