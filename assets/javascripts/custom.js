@@ -437,7 +437,7 @@
             // theme init
             theme_init: function() {
                 SAB.theme_scrollUP();
-                SAB.theme_counter();
+                //SAB.theme_counter();
                 SAB.theme_nav();
                 SAB.theme_nav_mobile();
                 SAB.theme_team_list();
