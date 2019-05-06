@@ -255,7 +255,6 @@
               if ( $( ".testimony-sab-slide" ).length ) {
                 var swiper = new Swiper('.testimony-sab-slide', {
                       effect: 'fade',
-                      autoHeight: true,
                        autoplay: {delay: 3000},
                         loop: true,
                         pagination: {
