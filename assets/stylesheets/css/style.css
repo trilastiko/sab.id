@@ -2519,7 +2519,7 @@ footer .copyright a:hover{ text-decoration: underline; }
         height: 490px;
         position: relative;
     }
-    .testimony-sab .swiper-slide p{ font-size: 22px; }
+    
 }
 @media (max-width: 375px) {
     .header-sab-slide .swiper-slide {
