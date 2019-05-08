@@ -210,7 +210,7 @@
 
                   var mySwiper = new Swiper ('.sab-work-page .swiper-container', {
                     // Optional parameters
-                    loop: true,
+                    loop: false,
                     slidesPerView: 2,
                     spaceBetween: 40,
 
