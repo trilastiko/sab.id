@@ -2461,11 +2461,16 @@ footer .copyright a:hover{ text-decoration: underline; }
 
     /* Services */
     .services-section-sab h2{ font-size: 42px; line-height: 1.3; margin-bottom: 20px }
-
+    .our-process .container{padding-right: 0; padding-left: 0}
     .img-our-process {
         overflow: inherit;
-        margin: 0 -130px;
+        margin: 0 ;
+        padding: 0;
     }
+
+    .our-process .container > .row > .col-lg-5{padding-right: 35px; padding-left:35px}
+
+    .img-our-process img{max-width: 100%}
 
     /* Testimonial */
     .testimony-sab .swiper-pagination{ left: auto; top:15px; }
