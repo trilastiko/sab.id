@@ -285,11 +285,19 @@
                     $this.find(".swiper-button-prev").addClass("btn-prev-" + index);
                     $this.find(".swiper-button-next").addClass("btn-next-" + index);
                     $this.find(".swiper-pagination").addClass("swiper-pagination-" + index);
-                    var swiper = new Swiper(".instance-" + index, {
 
-                        slidesPerView: 'auto',
+                    var e = $(".instance-" + index), s = "",
+        n = !1,
+        t = function(e) {
+            return e < 10 && (e = "0" + e), e
+        };
+                    return s  = new Swiper(e[0], {
+                        loop: !0,
+                        centeredSlides: !1,
+                        slidesPerView: "auto",
+                        speed: 400,
                         spaceBetween: 10,
-                        loop: true,
+                        width: 420,
                         lazy: {
                           loadPrevNext: true,
                           loadOnTransitionStart: true,
@@ -297,12 +305,12 @@
                         watchSlidesVisibility:true,
                         pagination: {
                             el: '.swiper-pagination-' + index,
-                            type: 'fraction',
-                            renderFraction: function (currentClass, totalClass) {
-                                  return '<span class="' + currentClass + '"></span>' +
+                            type: "custom",
+                            renderCustom: function(e, i, s) {
+                                return '<span class="swiper-pagination-current">' + t(i) + '</span>'+
                                          ' <span class="sp-line"></span>' +
-                                         '<span class="' + totalClass + '"></span>';
-                              }
+                                         '<span class="swiper-pagination-total">' + t(s) + "</span>"
+                            }
                         },
                         navigation: {
                         nextEl: '.btn-next-' + index,
@@ -312,9 +320,33 @@
                             // when window width is <= 480px
                             480: {
                               slidesPerView: 1,
-                              spaceBetween: 0
+                              width: 387,
+                              spaceBetween: 10
                             },
-
+                            // when window width is <= 425px
+                            425: {
+                              slidesPerView: 1,
+                              width: 372,
+                              spaceBetween: 15
+                            },
+                            // when window width is <= 384px
+                            384: {
+                              slidesPerView: 1,
+                              width: 335,
+                              spaceBetween: 10
+                            },
+                           // when window width is <= 320px
+                            360: {
+                              slidesPerView: 1,
+                              width: 320,
+                              spaceBetween: 5
+                            },
+                           // when window width is <= 320px
+                            320: {
+                              slidesPerView: 1,
+                              width: 280,
+                              spaceBetween: 5
+                            },
                         }
 
                     });

@@ -1048,7 +1048,7 @@ section.hero-images .whale-img {
 .testimony-sab .swiper-pagination-current, .swiper-pagination-total{ font-weight: bold; }
 .testimony-sab .swiper-pagination-current:before{content: "0"}
 .testimony-sab .swiper-pagination-total:before{content: "0"}
-.testimony-sab .swiper-pagination-fraction .sp-line{ display: inline-block; margin:0 10px;  width: 100px; height: 2px; vertical-align: middle; background-color: #a8b5d3 }
+.testimony-sab .works-sab-pagination .sp-line{ display: inline-block; margin:0 10px;  width: 100px; height: 2px; vertical-align: middle; background-color: #a8b5d3 }
 
 .testimony-sab .swiper-button-next, .testimony-sab .swiper-container-rtl .swiper-button-prev{
     background-image: url("../../../images/next.svg");
@@ -1178,16 +1178,16 @@ section.hero-images .whale-img {
     height: 35px;
     line-height: 35px;
 }
-
+/*
 .works-sab .swiper-pagination-current:before {
     content: "0"
 }
 
 .works-sab .swiper-pagination-total:before {
     content: "0"
-}
+}*/
 
-.works-sab .swiper-pagination-fraction .sp-line {
+.works-sab .works-sab-pagination .sp-line {
     display: inline-block;
     margin: 0 10px;
     width: 100px;
@@ -1206,7 +1206,7 @@ section.hero-images .whale-img {
     }
 }
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 480px) {
 
     .container {
         padding-right: 20px;
@@ -1217,7 +1217,7 @@ section.hero-images .whale-img {
 
     .works-sab .swiper-slide{ width: 400px; }
     .nav-works-sab{ text-align: left; margin-top: 0; display: none;}
-    .works-sab .swiper-pagination-fraction .sp-line{ margin: 0 5px 0 0; width: 30px;}
+    .works-sab .works-sab-pagination .sp-line{ margin: 0 5px 0 0; width: 30px;}
     .works-sab .swiper-pagination{
         right: 0;
         top: 4px;
@@ -1231,7 +1231,9 @@ section.hero-images .whale-img {
         opacity: 1;
         padding:0;
         border: 0; 
-        width: 340px;
+        max-width: 100%;
+
+       /*width: 340px;*/
 
     }
     .works-sab .swiper-button-next, .works-sab .swiper-button-prev{
@@ -2492,7 +2494,7 @@ footer .copyright a:hover{ text-decoration: underline; }
 
     /*with number*/
     .testimony-sab .swiper-pagination{ left: auto; }
-    .testimony-sab .swiper-pagination-fraction .sp-line {
+    .testimony-sab .works-sab-pagination .sp-line {
         display: inline-block;
         margin: 0 10px 0 5px;
         width: 30px;
@@ -2546,17 +2548,18 @@ footer .copyright a:hover{ text-decoration: underline; }
         text-align: left;
         font-size: 22px;
     }
+    /*
     .works-sab .swiper-container img {
         width: 300px;
-    }
+    }*/
     .works-sab .swiper-pagination { top: 0px;}
 
 }
 
 @media (max-width: 320px) {
-    .works-sab .swiper-container img {
+    /*.works-sab .swiper-container img {
         width: 260px;
-    }
+    }*/
     .works-sab .swiper-pagination-current, .works-sab .swiper-pagination-total {
         width: 22px;
         height: 22px;
