@@ -1134,7 +1134,7 @@ section.hero-images .whale-img {
     margin-top: -22px;
     z-index: 10;
     cursor: pointer;
-    background-size: auto;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #fff;
