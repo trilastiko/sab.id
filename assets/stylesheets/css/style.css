@@ -563,7 +563,7 @@ hr {
 }
 
 .sab-hr {
-    background: url("../../../images/hr.png") no-repeat center;
+    background: url("../../../images/hr.jpg") no-repeat center;
     height: 36px;
     width: 100%;
 }
@@ -1145,7 +1145,7 @@ section.hero-images .whale-img {
 }
 
 .works-sab .swiper-button-next {
-    background-image: url("../../../images/nav-swift-r.png");
+    background-image: url("../../../images/nav-swift-r.jpg");
     left: 10px;
     right: auto;
 }
@@ -1160,7 +1160,7 @@ section.hero-images .whale-img {
 
 .works-sab .swiper-button-next,
 .works-sab .swiper-container-rtl .swiper-button-prev {
-    background-image: url("../../../images/nav-swift-r.png");
+    background-image: url("../../../images/nav-swift-r.jpg");
     right: 20vw;
     left: auto;
 }
@@ -1246,7 +1246,7 @@ section.hero-images .whale-img {
 
     .works-sab .swiper-slide{ width: 400px; }
     .nav-works-sab{ text-align: left; margin-top: 0; display: none;}
-    .works-sab .swiper-pagination .sp-line{ margin: 0 5px 0 0; width: 30px;}
+    .works-sab .swiper-pagination .sp-line, .testimony-sab .swiper-pagination .sp-line{ margin: 0 5px 0 0; width: 30px;}
     .works-sab .swiper-pagination{
         right: 0;
         top: 4px;
