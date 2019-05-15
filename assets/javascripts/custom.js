@@ -285,6 +285,7 @@
                     $this.find(".swiper-button-prev").addClass("btn-prev-" + index);
                     $this.find(".swiper-button-next").addClass("btn-next-" + index);
                     $this.find(".swiper-pagination").addClass("swiper-pagination-" + index);
+                    
                     var e = $(".instance-" + index), 
                     s = "",
                     t = function(e) {
