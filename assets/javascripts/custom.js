@@ -285,20 +285,16 @@
                     $this.find(".swiper-button-prev").addClass("btn-prev-" + index);
                     $this.find(".swiper-button-next").addClass("btn-next-" + index);
                     $this.find(".swiper-pagination").addClass("swiper-pagination-" + index);
-
                     var e = $(".instance-" + index), 
                     s = "",
-                    n = !1,
                     t = function(e) {
                         return e < 10 && (e = "0" + e), e
                     };
                     return s  = new Swiper(e[0], {
-                        loop: !0,
-                        centeredSlides: !1,
-                        slidesPerView: "auto",
-                        speed: 400,
+
+                        slidesPerView: 'auto',
                         spaceBetween: 10,
-                        width: 420,
+                        loop: true,
                         lazy: {
                           loadPrevNext: true,
                           loadOnTransitionStart: true,
@@ -321,33 +317,9 @@
                             // when window width is <= 480px
                             480: {
                               slidesPerView: 1,
-                              width: 387,
-                              spaceBetween: 10
+                              spaceBetween: 0
                             },
-                            // when window width is <= 425px
-                            425: {
-                              slidesPerView: 1,
-                              width: 372,
-                              spaceBetween: 15
-                            },
-                            // when window width is <= 384px
-                            384: {
-                              slidesPerView: 1,
-                              width: 335,
-                              spaceBetween: 10
-                            },
-                           // when window width is <= 320px
-                            360: {
-                              slidesPerView: 1,
-                              width: 320,
-                              spaceBetween: 5
-                            },
-                           // when window width is <= 320px
-                            320: {
-                              slidesPerView: 1,
-                              width: 280,
-                              spaceBetween: 5
-                            },
+
                         }
 
                     });
