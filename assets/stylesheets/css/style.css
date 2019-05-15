@@ -565,6 +565,7 @@ hr {
 .sab-hr {
     background: url("../../../images/hr.png") no-repeat center;
     height: 36px;
+    width: 100%;
 }
 
 .space20 {
