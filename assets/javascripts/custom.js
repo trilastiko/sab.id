@@ -286,11 +286,12 @@
                     $this.find(".swiper-button-next").addClass("btn-next-" + index);
                     $this.find(".swiper-pagination").addClass("swiper-pagination-" + index);
 
-                    var e = $(".instance-" + index), s = "",
-        n = !1,
-        t = function(e) {
-            return e < 10 && (e = "0" + e), e
-        };
+                    var e = $(".instance-" + index), 
+                    s = "",
+                    n = !1,
+                    t = function(e) {
+                        return e < 10 && (e = "0" + e), e
+                    };
                     return s  = new Swiper(e[0], {
                         loop: !0,
                         centeredSlides: !1,
@@ -382,11 +383,11 @@
                     var body = $('body').scrollTop();
 
                     if(body < top2){
-                        $('.nav-works-sab').css({'position':'static', 'top': 'auto', 'width' : 'auto'});
+                        $('.nav-works-container').css({'position':'static', 'top': 'auto', 'width' : 'auto'});
                     }else if(body <= top){
-                        $('.nav-works-sab').css({'position':'fixed', 'top': '120px', 'width' : 'auto'}).fadeIn('fast');
+                        $('.nav-works-container').css({'position':'fixed', 'top': '120px', 'width' : 'auto'}).fadeIn('fast');
                     }else{
-                        $('.nav-works-sab').css({'position':'static', 'top': 'auto', 'width' : 'auto'});
+                        $('.nav-works-container').css({'position':'static', 'top': 'auto', 'width' : 'auto'});
                     }
 
                      // Assign active class to nav links while scolling
@@ -397,8 +398,8 @@
                       var divPosition = $(this).offset().top;
                       if( divPosition - 200 < currentScroll ){
                         currentSection = $(this);
-                         $('.nav-works-sab a.active').removeClass('active');
-                         $('.nav-works-sab a').eq(i).addClass('active');
+                         $('.nav-works-container a.active').removeClass('active');
+                         $('.nav-works-container a').eq(i).addClass('active');
                       }
 
 

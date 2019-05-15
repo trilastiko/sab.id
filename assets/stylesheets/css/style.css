@@ -515,6 +515,34 @@ p {
     transition: all 0.2s ease-out;
 }
 
+.nav-works-container .view-box {
+    margin-top: 40px;
+    top: 0;
+    position: relative;
+}
+.nav-works-container .view-box .contents-view {
+    color: #224390;
+    font-weight: 600;
+    padding-left: 20px;
+    text-decoration: none;
+}
+.nav-works-container .view-box .contents-view:hover {color: #91a1c8;}
+.nav-works-container .contents-view:before {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(../../../images/ico-view.svg);
+    height: 14px;
+    left: 0px;
+    position: absolute;
+    top: 6px;
+    width: 14px;
+}
+
+
 ul,
 li {
     margin: 0;
@@ -1048,7 +1076,7 @@ section.hero-images .whale-img {
 .testimony-sab .swiper-pagination-current, .swiper-pagination-total{ font-weight: bold; }
 .testimony-sab .swiper-pagination-current:before{content: "0"}
 .testimony-sab .swiper-pagination-total:before{content: "0"}
-.testimony-sab .works-sab-pagination .sp-line{ display: inline-block; margin:0 10px;  width: 100px; height: 2px; vertical-align: middle; background-color: #a8b5d3 }
+.testimony-sab .swiper-pagination .sp-line{ display: inline-block; margin:0 10px;  width: 100px; height: 2px; vertical-align: middle; background-color: #a8b5d3 }
 
 .testimony-sab .swiper-button-next, .testimony-sab .swiper-container-rtl .swiper-button-prev{
     background-image: url("../../../images/next.svg");
@@ -1187,7 +1215,7 @@ section.hero-images .whale-img {
     content: "0"
 }*/
 
-.works-sab .works-sab-pagination .sp-line {
+.works-sab .swiper-pagination .sp-line {
     display: inline-block;
     margin: 0 10px;
     width: 100px;
@@ -1217,7 +1245,7 @@ section.hero-images .whale-img {
 
     .works-sab .swiper-slide{ width: 400px; }
     .nav-works-sab{ text-align: left; margin-top: 0; display: none;}
-    .works-sab .works-sab-pagination .sp-line{ margin: 0 5px 0 0; width: 30px;}
+    .works-sab .swiper-pagination .sp-line{ margin: 0 5px 0 0; width: 30px;}
     .works-sab .swiper-pagination{
         right: 0;
         top: 4px;
