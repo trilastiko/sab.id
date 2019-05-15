@@ -1143,12 +1143,12 @@ section.hero-images .whale-img {
     -moz-box-shadow: 0px 0px 5px 0px rgba(34,67,144,1);
     box-shadow: 0px 0px 5px 0px rgba(34,67,144,1);
 }
-
+/*
 .works-sab .swiper-button-next {
     background-image: url("../../../images/nav-swift-r.jpg");
     left: 10px;
     right: auto;
-}
+}*/
 
 .works-sab .swiper-button-prev,
 .works-sab .swiper-container-rtl .swiper-button-next {
