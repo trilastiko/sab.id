@@ -1,5 +1,5 @@
 <?php
-$toEmail = "alik.dagdigdug@gmail.com";
+$toEmail = "mail@sab.id";
 $subject = "Contact form from website sab.id";
 $mailHeaders = "From: " . $_POST["userName"] . "<". $_POST["userEmail"] .">\r\n";
 if(mail($toEmail, $subject, $_POST["message"], $mailHeaders)) {
