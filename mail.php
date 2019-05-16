@@ -6,4 +6,8 @@ $from = 'jane@runcloud.me';
 
 $headers = sprintf("From: %s\r\nReply-To: %s", $from, $from);
 
-mail($to, $subject, $message, $headers);
+if(mail($to, $subject, $message, $headers)){
+print "<p class='success'>Contact Mail Sent.</p>";
+} else {
+print "<p class='Error'>Problem in Sending Mail.</p>";
+}
