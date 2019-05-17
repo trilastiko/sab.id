@@ -2,10 +2,10 @@
 include "classes/class.phpmailer.php";
 $mail = new PHPMailer; 
 $mail->IsSMTP();
-$mail->SMTPSecure = 'tls'; 
+$mail->SMTPSecure = 'ssl'; 
 $mail->Host = "smtp.gmail.com"; //host masing2 provider email
 $mail->SMTPDebug = 2;
-$mail->Port = 587;
+$mail->Port = 465;
 $mail->SMTPAuth = true;
 $mail->Username = "alik.dagdigdug@gmail.com"; //user email
 $mail->Password = "Lengkong88"; //password email 
