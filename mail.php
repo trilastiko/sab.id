@@ -1,28 +1,18 @@
 <?php
-
-error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
-
-set_include_path("." . PATH_SEPARATOR . ($UserDir = dirname($_SERVER['DOCUMENT_ROOT'])) . "/pear/php" . PATH_SEPARATOR . get_include_path());
-require_once "Mail.php";
-
-$host = "ssl://smtp.gmail.com";
-$username = "alik.dagdigdug@gmail.com";
-$password = "Lengkong88";
-$port = "465";
-$to = "alik.dagdigdug@gmail.com";
-$email_from = "mail@example.com";
-$email_subject = "Subject Line Here: " ;
-$email_body = "whatever you like" ;
-$email_address = "reply-to@example.com";
-
-$headers = array ('From' => $email_from, 'To' => $to, 'Subject' => $email_subject, 'Reply-To' => $email_address);
-$smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $username, 'password' => $password));
-$mail = $smtp->send($to, $headers, $email_body);
-
-
-if (PEAR::isError($mail)) {
-echo("<p>" . $mail->getMessage() . "</p>");
-} else {
-echo("<p>Message successfully sent!</p>");
-}
+include "classes/class.phpmailer.php";
+$mail = new PHPMailer; 
+$mail->IsSMTP();
+$mail->SMTPSecure = 'ssl'; 
+$mail->Host = "smtp.gmail.com"; //host masing2 provider email
+$mail->SMTPDebug = 2;
+$mail->Port = 465;
+$mail->SMTPAuth = true;
+$mail->Username = "alik.dagdigdug@gmail.com"; //user email
+$mail->Password = "Lengkong88"; //password email 
+$mail->SetFrom("mail@domain.com","Nama pengirim"); //set email pengirim
+$mail->Subject = "Testing"; //subyek email
+$mail->AddAddress("alik.dagdigdug@gmail.com","Abdul");  //tujuan email
+$mail->MsgHTML("Testing...");
+if($mail->Send()) echo "Message has been sent";
+else echo "Failed to sending message";
 ?>
