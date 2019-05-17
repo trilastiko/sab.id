@@ -4,7 +4,7 @@ $mail = new PHPMailer;
 $mail->IsSMTP();
 $mail->SMTPSecure = 'ssl'; 
 $mail->Host = "banshee.mxlogin.com"; //host masing2 provider email
-$mail->SMTPDebug = 2;
+$mail->SMTPDebug = 0;
 $mail->Port = 465;
 $mail->SMTPAuth = true;
 $mail->Username = "mail@sab.id"; //user email
