@@ -1148,7 +1148,7 @@ section.hero-images .whale-img {
     background-image: url("../../../images/nav-swift-r.jpg");
     left: 10px;
     right: auto;
-}*/
+}
 
 .works-sab .swiper-button-prev,
 .works-sab .swiper-container-rtl .swiper-button-next {
@@ -1156,17 +1156,18 @@ section.hero-images .whale-img {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
     left: 10px;
     right: auto;
-}
+}*/
 
 .works-sab .swiper-button-next,
 .works-sab .swiper-container-rtl .swiper-button-prev {
-    background-image: url("../../../images/nav-swift-r.jpg");
+    background-image: url("../../../images/nav-swift-r.png");
     right: 20vw;
     left: auto;
 }
 
 .works-sab .swiper-container {
     padding-bottom: 0px;
+
     width: 80vw;
     height: auto;
     margin-bottom: 30px;
@@ -1225,14 +1226,16 @@ section.hero-images .whale-img {
     background-color: #a8b5d3
 }
 @media only screen and (max-width: 1024px) {
-    .nav-works-sab a {
+    .nav-works-sab a, .nav-works-container .view-box .contents-view {
         font-size: 14px;
     }
+    .nav-works-container .contents-view:before{top: 8px; height: 12px; width: 12px;}
 }
 @media only screen and (max-width: 768px) {
-    .nav-works-sab a {
+    .nav-works-sab a, .nav-works-container .view-box .contents-view {
         font-size: 10px;
     }
+    .nav-works-container .contents-view:before{height: 10px; top: 10px; width: 10px;}
 }
 
 @media only screen and (max-width: 480px) {
@@ -1261,7 +1264,7 @@ section.hero-images .whale-img {
         padding:0;
         border: 0; 
         max-width: 100%;
-
+        height: auto;
        /*width: 340px;*/
 
     }
