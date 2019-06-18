@@ -935,6 +935,9 @@ section.hero-images .whale-img {
     .bg-hero-images {
         background-position: top right
     }
+    .nav-sab .nav-round a{ margin-left:0; }
+    .nav-sab .col.text-left{ max-width: 16%; }
+
 }
 
 @media (max-width: 480px) {
