@@ -2562,6 +2562,22 @@ footer .copyright a:hover{ text-decoration: underline; }
     }
 
 }
+@media (max-width: 479px) {
+.nav-sab .text-left img, .nav-sab.fixed a img{max-width:none}
+.bg-city-hero-images{
+    background-position: top center;
+    background-size: 240%;
+}
+section.hero-images{padding-top:80px; background:transparent !important}
+.bg-hero-images {
+        background-size: 100%;
+        background-position: top center;
+        background-position-y: 160px;
+    height:400px;
+        /*height:100vh;*/
+}
+
+}
 @media (max-width: 375px) {
     .header-sab-slide .swiper-slide {
         width: 95%;
