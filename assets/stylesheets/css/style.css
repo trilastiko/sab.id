@@ -944,6 +944,10 @@ section.hero-images .whale-img {
     .nav-sab .col.text-left{ max-width: 16%; }
 }
 
+@media only screen and (min-width: 1025px) and (max-width: 1190px) {
+.nav-sab .nav-list a{font-size: 16px;}
+}
+
 @media (max-width: 480px) {
     .hero-images .swiper-pagination{ right: 20px; }
     .bg-hero-images{background-position-y: 70px;}
