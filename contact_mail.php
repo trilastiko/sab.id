@@ -1,18 +1,25 @@
 <?php
-include "classes/class.phpmailer.php";
-$mail = new PHPMailer; 
-$mail->IsSMTP();
-$mail->SMTPSecure = 'ssl'; 
-$mail->Host = "banshee.mxlogin.com"; //host masing2 provider email
-$mail->SMTPDebug = 0;
-$mail->Port = 465;
-$mail->SMTPAuth = true;
-$mail->Username = "mail@sab.id"; //user email
-$mail->Password = "APn7Tyue3t,N"; //password email 
-$mail->SetFrom($_POST["userEmail"],$_POST["userName"]); //set email pengirim
-$mail->Subject = "Contact form from website sab.id"; //subyek email
-$mail->AddAddress("mail@sab.id","SAB");  //tujuan email
-$mail->MsgHTML($_POST["message"]);
-if($mail->Send()) echo "<p class='success'>Contact Mail Sent.</p>";
-else echo "<p class='Error'>Problem in Sending Mail.</p>";
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Allow: POST');
+    http_response_code(405);
+    exit('Method not allowed.');
+}
+$email = isset($_POST['userEmail']) && is_string($_POST['userEmail']) ? trim($_POST['userEmail']) : '';
+$name = isset($_POST['userName']) && is_string($_POST['userName']) ? trim($_POST['userName']) : '';
+$message = isset($_POST['message']) && is_string($_POST['message']) ? trim($_POST['message']) : '';
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || preg_match('/[\r\n]/', $email . $name) || strlen($name) > 200 || $message === '' || strlen($message) > 20000) {
+    http_response_code(400);
+    exit('Please provide a valid email address and message.');
+}
+include __DIR__ . '/classes/class.phpmailer.php';
+require __DIR__ . '/smtp_config.php';
+$mail->AddReplyTo($email, $name);
+$mail->Subject = 'Contact form from website sab.id';
+$mail->AddAddress('mail@sab.id', 'SAB');
+$mail->MsgHTML(nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8')));
+if ($mail->Send()) echo "<p class='success'>Contact Mail Sent.</p>";
+else {
+    http_response_code(502);
+    echo "<p class='Error'>Problem in Sending Mail.</p>";
+}
 ?>
