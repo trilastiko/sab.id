@@ -5,3 +5,7 @@ The SMTP migration in this PR requires hosting configuration before deployment. 
 The new baseline scans the current checked-out tree, not historical commits. Do not interpret a green check as proof that historical credentials were revoked. No production deployment or provider credential test was performed.
 
 Repository rulesets, required PR checks, secret scanning/push protection, Dependabot alerts, account 2FA, and token/SSH-key hygiene require verification in GitHub settings. These settings were not mutated by this PR. Apply required checks only after their first verified successful run, so existing deployments are not unexpectedly blocked.
+
+## CI triage follow-up
+
+The generic-api-key matches in WordPress editor.js and editor.min.js are the upstream UI identifier incorrect-break-h1. Only those two exact scanner fingerprints are excluded; the Maps key finding remains blocking until provider restrictions/rotation or a separately verified replacement is complete. SMTP provisioning and live delivery are still prerequisites for merging this runtime change.
